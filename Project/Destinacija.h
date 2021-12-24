@@ -32,6 +32,7 @@ public:
 	float getCijena();
 	Prijevoz getPrijevoz();
 	static int getBrojOsoba();
+	
 	friend std::istream& operator>>(std::istream& stream, Destinacija& d);
 	friend std::ostream& operator<<(std::ostream& stream, Destinacija& d);
 	std::string getStatusString();

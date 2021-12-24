@@ -56,5 +56,6 @@ int main()
 {
 	Destinacija dest;
 	std::cin >> dest;
+	dest.setPutnik();
 	return 0;
 }
