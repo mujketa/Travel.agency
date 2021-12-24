@@ -3,7 +3,7 @@
 class Osoba
 {
 private:
-	char ime[30], prezime[30]; //evo da znamo razliku
+	char ime[30], prezime[30]; // broj
 	std::string email;
 	std::string brojKartice;
 	std::string brojTelefona;
