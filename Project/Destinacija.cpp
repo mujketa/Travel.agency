@@ -51,6 +51,7 @@ void Destinacija::setCijena()
 {
 	std::cout << "Unesite cijenu (KM): ";
 	std::cin >> this->cijena;
+	std::cin.ignore();
 }
 
 void Destinacija::setPrijevoz()
@@ -66,16 +67,58 @@ void Destinacija::setPrijevoz()
 }
 
 void Destinacija::setPutnik()
-{
-	Osoba o;
-	std::cout << "****UNOS PUTNIKA****\n";
-	o.setIme();
-	o.setPrezime();
-	o.setEmail();
-	o.setBrojKartice();
-	o.setBrojTelefona();
-	this->putnik.push_back(o);
-}
+
+	{
+		Osoba o;
+		std::ifstream some("putnik.txt");
+		std::string temp;
+		int ID = -3;//stavljamo brojac ID na -3 jer preskacemo prve 3 linije iz datoteke
+		some >> temp;
+		if (some.eof()) {
+			some.close();
+			std::ofstream open("putnik.txt");
+			open << "------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------" << std::endl;
+			open << std::left << std::setw(6) << "ID:" << std::setw(20) << "Ime:" << std::setw(23) << "Prezime:" << std::setw(30) << "Email:" << std::setw(18) << "Broj telefona:" << std::setw(18) << "Broj kartice:" << std::endl;
+			open << "------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------" << std::endl;
+			open.close();
+		}
+		else some.close();
+		//-------------------------------
+		std::ifstream unosID("putnik.txt");
+		std::string mobi;
+		do {
+			std::getline(unosID, mobi);           //ovim omogucujemo da se ID uvijek povecava za 1 prilikom unosenja novog mobitela
+			ID++;
+		} while (!unosID.eof());
+		unosID.close();
+		//---------------------------------
+
+		std::ofstream unos("putnik.txt", std::ios::app);
+		if (unos.fail()) {
+			std::cout << "Nemoguce pristupiti bazi podataka!!!";
+		}
+		else {
+			unos << std::left << std::setw(6) << ID;
+			ID++;
+			o.setIme();
+			unos << std::setw(20) << o.getIme();
+			o.setPrezime();
+			unos << std::setw(23) << o.getPrezime();
+			o.setEmail();
+			unos << std::setw(30) << o.getEmail();
+			o.setBrojTelefona();
+			unos << std::setw(18) << o.getBrojTelefona();
+			o.setBrojKartice();
+			unos << std::setw(18) << o.getBrojKartice();
+
+			unos << std::endl;
+
+		}
+		unos.close();
+
+	}
+
+
 
 void Destinacija::setBrojOsoba()
 {
