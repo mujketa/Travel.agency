@@ -31,8 +31,8 @@ public:
 	char* getDatumPovratka();
 	float getCijena();
 	Prijevoz getPrijevoz();
-	static int getBrojOsoba();
-	
+	static int getBrojOsoba();// izbrisati
+	void izbrisiDestinaciju();
 	friend std::istream& operator>>(std::istream& stream, Destinacija& d);
 	friend std::ostream& operator<<(std::ostream& stream, Destinacija& d);
 	std::string getStatusString();
