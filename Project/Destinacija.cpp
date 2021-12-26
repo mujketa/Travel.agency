@@ -167,6 +167,59 @@ int Destinacija::getBrojOsoba()
 	return Destinacija::brojOsoba;
 }
 
+void Destinacija::izbrisiDestinaciju()
+{/*
+	Destinacija d;
+	std::cout << d;
+	int ID, br = 0;
+	std::ifstream some("destinacije.txt");
+	std::ofstream pomocna("pomocna.txt");
+	std::cout << "Unesite ID destinacije koju zelite ukloniti: ";
+	std::cin >> ID;
+	std::cin.ignore();
+	if (pomocna.eof()) {
+		pomocna.close();
+		std::ofstream open("pomocna.txt");
+		open << "------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------" << std::endl;
+		open << std::left << std::setw(6) << "ID:" << std::setw(20) << "Grad:" << std::setw(23) << "Drzava:" << std::setw(30) << "Hotel:" << std::setw(18) << "Datum polaska:" << std::setw(18) << "Datum povratka:" << std::setw(25) << "Slobodan broj mjesta:" << std::setw(25) << "Vrsta prijevoza:" << std::setw(20) << "Cijena(KM):" << std::endl;
+		open << "------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------" << std::endl;
+		open.close();
+	}
+	else some.close();
+	std::ofstream unos("pomocna.txt");
+	std::string status;
+	while (!some.eof()) {
+		status = d.getStatusString();
+		some >> d.getGrad();
+		some >> d.getDrzava();
+		some >> d.getHotel();
+		some >> d.getDatumPolaska();
+		some >> d.getDatumPovratka();
+		some >> d.brojOsoba;
+		some >> status;
+		some >> d.cijena;
+		br++;
+		if(br!=ID){
+		unos << std::setw(20) << d.getGrad();
+		unos << std::setw(23) << d.getDrzava();
+		unos << std::setw(30) << d.getHotel();
+		unos << std::setw(18) << d.getDatumPolaska();
+		unos << std::setw(18) << d.getDatumPovratka();
+		unos << std::setw(25) << d.getBrojOsoba();
+		unos << std::setw(25) << d.getStatusString();
+		unos << std::setw(20) << d.getCijena();
+		}
+	}
+	unos.close();
+	some.close();
+	remove("destinacije.txt");
+	rename("pomocna.txt", "destinacije.txt");
+	std::cout << d;
+	*/
+
+}
+
+
 /*-------------------OPERATOR ZA UNOS DESTINACIJE U SKLOPU ADMIN MENUA-----------------*/
 std::istream& operator>>(std::istream& stream, Destinacija& d)
 {
@@ -189,7 +242,7 @@ std::istream& operator>>(std::istream& stream, Destinacija& d)
 	std::ifstream unosID("destinacije.txt");
 	std::string mobi;
 	do {
-		std::getline(unosID, mobi);           //ovim omogucujemo da se ID uvijek povecava za 1 prilikom unosenja novog mobitela
+		std::getline(unosID, mobi);           //ovim omogucujemo da se ID uvijek povecava za 1 prilikom unosenja nove destinacije
 		ID++;
 	} while (!unosID.eof());
 	unosID.close();
@@ -227,9 +280,19 @@ std::istream& operator>>(std::istream& stream, Destinacija& d)
 
 	return stream;
 }
-
+/*ISPIS DESTINACIJA*/
 std::ostream& operator<<(std::ostream& stream, Destinacija& d)
 {
+	std::string line;
+	std::ifstream some("destinacije.txt");
+	if (some.is_open())
+	{
+		while (getline(some, line))
+		{
+			stream << line << '\n';
+		}
+		some.close();
+	}
 	return stream;
 }
 

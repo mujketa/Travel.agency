@@ -139,11 +139,13 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Admin.cpp" />
     <ClCompile Include="Destinacija.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Osoba.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Admin.h" />
     <ClInclude Include="Destinacija.h" />
     <ClInclude Include="Osoba.h" />
   </ItemGroup>
