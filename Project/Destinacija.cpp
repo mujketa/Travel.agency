@@ -166,28 +166,113 @@ int Destinacija::getBrojOsoba()
 {
 	return Destinacija::brojOsoba;
 }
+void Destinacija::izbrisiDestinaciju()
+{
+	std::string temp, tempp;
+	int br = 0, id, broj;
+	do {
+		std::cout << "Unesite ID destinacije koju zelite ukloniti:: ";
+		std::cin >> id;
+	} while (id < 0 || id>20);    //ne moze se unijeti prazan string
+	std::ifstream destinacije("destinacije.txt", std::ios::in);
+	std::ofstream pomocna("pomocna.txt");
+	if (destinacije.fail()) std::cout << "Nemoguce otvoriti datoteku!" << std::endl;
+	else
+	{
+		std::getline(destinacije, temp);
+		pomocna << temp << std::endl;
+		std::getline(destinacije, temp);
+		pomocna << temp << std::endl;
+		std::getline(destinacije, temp);
+		pomocna << temp << std::endl;
+		while (true)
+		{
+			destinacije >> broj;
+			if (destinacije.eof()) break;
+			if (broj==id)
+			{
+				br++;
+				std::getline(destinacije, tempp);
+				pomocna << std::left << std::setw(6) << br;
+				pomocna << std::setw(15) << temp;
+				destinacije >> temp;
+				pomocna << std::setw(23) << temp;
+				destinacije >> temp;
+				pomocna << std::setw(30) << temp;
+				destinacije >> temp;
+				pomocna << std::setw(18) << temp;
+				destinacije >> temp;
+				pomocna << std::setw(18) << temp;
+				destinacije >> temp;
+				pomocna << std::setw(25) << temp;
+				destinacije >> temp;
+				pomocna << std::setw(25) << temp;
+				destinacije >> temp;
+				pomocna << std::setw(20) << temp;
+				destinacije >> temp;
+				pomocna << std::endl;
+			}
+			else 
+				{
+				br++;
+				pomocna << br;
+				getline(destinacije, temp);
+				pomocna << temp << std::endl;
+				}
+			
+			
+		}
+
+	}
+}
+/*
 void Destinacija::izbrisiDestinaciju() {
 	std::string id, temp, tempp;
+	int br = -3;
 	do {
 		std::cout << "Unesite ID destinacije koju zelite ukloniti:: ";
 		getline(std::cin, id);
-	} while (id.length() < 1);    //ne moze se unijet prazan string
+	} while (id.length() < 1);    //ne moze se unijeti prazan string
 	std::ifstream destinacije("destinacije.txt", std::ios::in);
 	std::ofstream pomocna("pomocna.txt");
 	while (std::getline(destinacije, temp))
 	{
-		if (temp.substr(0, id.size()) != id) { //sve dok je razlicito od imena i prezimena koje smo unijeli
-			pomocna << temp << std::endl;                //ispisuje liniju u datoteku 
+		if (temp.substr(0, id.size()) != id) { //sve dok je razlicito od ID koji smo unijeli
+			pomocna << temp << std::endl;                //ispisuje liniju u datoteku pomocna.txt
+			br++;
 		}
-		
+		else if (temp.substr(0, id.size()) == id) { //ako se poklopi ID u datoteci
+			break;
+		}
 	}
 	destinacije.close();
 	pomocna.close();
-	remove("destinacije.txt");                 //brise narudzbe.txt
-	rename("pomocna.txt", "destinacije.txt");  //mijenja naziv temp.txt u skladiste.txt
+	remove("destinacije.txt");                 //brise destinacije.txt
+	rename("pomocna.txt", "destinacije.txt");  //mijenja naziv pomocna.txt u destinacije.txt
 
 }
+*/
+
 /*
+ 	while (!destinacije.eof())
+			{
+				if (destinacije.eof()) break;
+				else
+				{
+					pomocna << std::left << std::setw(6) << br;
+					pomocna << std::setw(20) << temp;
+					pomocna << std::setw(23) << temp;
+					pomocna << std::setw(30) << temp;
+					pomocna << std::setw(18) << temp;
+					pomocna << std::setw(18) << temp;
+					pomocna << std::setw(25) << temp;
+					pomocna << std::setw(25) << temp;
+					pomocna << std::setw(20) << temp;
+					pomocna << std::endl;
+					
+					
+				}
+			}
 void Destinacija::izbrisiDestinaciju()
 {
 	Destinacija d;

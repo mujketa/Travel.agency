@@ -4,7 +4,7 @@ ID:   Grad:               Drzava:                Hotel:                        D
 1     fghfg               fgdhg                  fdghg                         456               456547            546                      Avion                    543                 
 2     tokio               japan                  sfsdfd                        56445             645654            56                       Avion                    32                  
 3     fdsgdf              frgfd                  fghfgh                        5464              5465              44                       Avion                    453                 
-6     tokio               japan                  sfsdfd                        56445             645654            56                       Avion                    32                  
-7     fdsgdf              frgfd                  fghfgh                        5464              5465              44                       Avion                    453                
-8     fdsgdf              frgfd                  fghfgh                        5464              5465              44                       Avion                    453 
-               
+4     tokio               japan                  sfsdfd                        56445             645654            56                       Avion                    32                  
+5     fdsgdf              frgfd                  fghfgh                        5464              5465              44                       Avion                    453                
+6     jhgj                fdgdf                  hgfgf                         76565             567               567                      Avion                    67                  
+7     fghgf               hjgh                   hgfh                          456               54654             456                      Avion                    543                 
