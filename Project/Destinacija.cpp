@@ -166,9 +166,30 @@ int Destinacija::getBrojOsoba()
 {
 	return Destinacija::brojOsoba;
 }
+void Destinacija::izbrisiDestinaciju() {
+	std::string id, temp, tempp;
+	do {
+		std::cout << "Unesite ID destinacije koju zelite ukloniti:: ";
+		getline(std::cin, id);
+	} while (id.length() < 1);    //ne moze se unijet prazan string
+	std::ifstream destinacije("destinacije.txt", std::ios::in);
+	std::ofstream pomocna("pomocna.txt");
+	while (std::getline(destinacije, temp))
+	{
+		if (temp.substr(0, id.size()) != id) { //sve dok je razlicito od imena i prezimena koje smo unijeli
+			pomocna << temp << std::endl;                //ispisuje liniju u datoteku 
+		}
+		
+	}
+	destinacije.close();
+	pomocna.close();
+	remove("destinacije.txt");                 //brise narudzbe.txt
+	rename("pomocna.txt", "destinacije.txt");  //mijenja naziv temp.txt u skladiste.txt
 
+}
+/*
 void Destinacija::izbrisiDestinaciju()
-{/*
+{
 	Destinacija d;
 	std::cout << d;
 	int ID, br = 0;
@@ -217,7 +238,7 @@ void Destinacija::izbrisiDestinaciju()
 	std::cout << d;
 	*/
 
-}
+
 
 
 /*-------------------OPERATOR ZA UNOS DESTINACIJE U SKLOPU ADMIN MENUA-----------------*/

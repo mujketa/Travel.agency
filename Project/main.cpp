@@ -57,12 +57,12 @@ int korisnickiMenu()
 int main()
 {
 	Destinacija dest;
-	std::cin >> dest;
-	/*dest.setPutnik();
+	//std::cin >> dest;
+	//dest.setPutnik();
 	Admin a;
-	a.prijavaAdmina();
-	a.dodajAdmina();
-	std::cout << dest;*/
+	//a.prijavaAdmina();
+	//a.dodajAdmina();
+	std::cout << dest;
 	dest.izbrisiDestinaciju();
 
 	return 0;
