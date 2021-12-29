@@ -1,10 +1,13 @@
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 ID:   Grad:               Drzava:                Hotel:                        Datum polaska:    Datum povratka:   Slobodan broj mjesta:    Vrsta prijevoza:         Cijena(KM):         
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-1     fghfg               fgdhg                  fdghg                         456               456547            546                      Avion                    543                 
-2     tokio               japan                  sfsdfd                        56445             645654            56                       Avion                    32                  
-3     fdsgdf              frgfd                  fghfgh                        5464              5465              44                       Avion                    453                 
-4     tokio               japan                  sfsdfd                        56445             645654            56                       Avion                    32                  
-5     fdsgdf              frgfd                  fghfgh                        5464              5465              44                       Avion                    453                
-6     jhgj                fdgdf                  hgfgf                         76565             567               567                      Avion                    67                  
-7     fghgf               hjgh                   hgfh                          456               54654             456                      Avion                    543                 
+1     paris               france                 keptet                        01.06.2011.       01.06.2011.       120                      Avion                    550                 
+2     kairo               egipat                 sdgfdg                        2353245           3453453           54                       Avion                    546                 
+3     washington          usa                    trump                         4364356           235346            60                       Avion                    1200                
+4     sarajevo            bih                    swiss                         32564536          345534            40                       Autobus                  150                 
+5     madrid              spain                  nesto                         43564             3456436           45                       Avion                    600    
+6     paris               france                 keptet                        01.06.2011.       01.06.2011.       120                      Avion                    550                 
+7     kairo               egipat                 sdgfdg                        2353245           3453453           54                       Avion                    546                 
+8     washington          usa                    trump                         4364356           235346            60                       Avion                    1200                
+9     sarajevo            bih                    swiss                         32564536          345534            40                       Autobus                  150                 
+10     madrid              spain                  nesto                         43564             3456436           45                       Avion                    600              

@@ -59,7 +59,7 @@ int main()
 	Destinacija dest;
 	//std::cin >> dest;
 	//dest.setPutnik();
-	Admin a;
+	//Admin a;
 	//a.prijavaAdmina();
 	//a.dodajAdmina();
 	std::cout << dest;

@@ -1,3 +1,2 @@
-﻿  Destinacija.cpp
-C:\Users\HAMZA\Desktop\GitHub\Travel.agency\Project\Destinacija.cpp(418): warning C4715: 'Destinacija::getStatusString': not all control paths return a value
+﻿  main.cpp
   Project.vcxproj -> C:\Users\HAMZA\Desktop\GitHub\Travel.agency\Project\Debug\Project.exe

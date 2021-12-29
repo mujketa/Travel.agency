@@ -168,33 +168,35 @@ int Destinacija::getBrojOsoba()
 }
 void Destinacija::izbrisiDestinaciju()
 {
-	std::string temp, tempp;
+	std::string temp, tempp; //u temmp smjestam ono sto treba ispisati u datoteci, a sa tempp preskaacem onaj red koji treba izbrisati
 	int br = 0, id, broj;
 	do {
 		std::cout << "Unesite ID destinacije koju zelite ukloniti:: ";
 		std::cin >> id;
 	} while (id < 0 || id>20);    //ne moze se unijeti prazan string
 	std::ifstream destinacije("destinacije.txt", std::ios::in);
-	std::ofstream pomocna("pomocna.txt");
+	std::ofstream pomocna("pomocna.txt"); //treba nam pomocna.txt jer u nju prepisujemo sve podatke iz destinacije.txt, ali bez one destinacije koju smo obrisali
 	if (destinacije.fail()) std::cout << "Nemoguce otvoriti datoteku!" << std::endl;
 	else
 	{
-		std::getline(destinacije, temp);
+		std::getline(destinacije, temp); //
 		pomocna << temp << std::endl;
-		std::getline(destinacije, temp);
+		std::getline(destinacije, temp); //
 		pomocna << temp << std::endl;
-		std::getline(destinacije, temp);
+		std::getline(destinacije, temp); //preskacem prva 3 reda jer u njima se ne nalaze podaci o destinacijama
 		pomocna << temp << std::endl;
 		while (true)
 		{
-			destinacije >> broj;
-			if (destinacije.eof()) break;
+			destinacije >> broj; //smjestamo id iz datoteke u broj(int) da bi ga mogli porediti sa id koji smo unijeli
+			if (destinacije.eof()) break; //kad dodje do kraja datoteke prekida while
 			if (broj==id)
 			{
-				br++;
-				std::getline(destinacije, tempp);
-				pomocna << std::left << std::setw(6) << br;
-				pomocna << std::setw(15) << temp;
+				br++; //brojac nam treba jer kada obrisemo liniju iz datoteke, u sljedecim linijama id se mora smanjiti za 1, a tu koristimo brojac
+				std::getline(destinacije, tempp); //brisemo liniju iz datoteke tako sto je smjestamo u tempp
+				destinacije >> broj; //smjestam id iz datoteke u broj
+				pomocna << std::left << std::setw(6) << broj-1; //ubacujemo id u sljedecu liniju, ali smanjen za 1, jer smo obrisali destinaciju iznad u datoteci
+				destinacije >> temp;
+				pomocna << std::setw(20) << temp;
 				destinacije >> temp;
 				pomocna << std::setw(23) << temp;
 				destinacije >> temp;
@@ -209,13 +211,12 @@ void Destinacija::izbrisiDestinaciju()
 				pomocna << std::setw(25) << temp;
 				destinacije >> temp;
 				pomocna << std::setw(20) << temp;
-				destinacije >> temp;
 				pomocna << std::endl;
 			}
-			else 
+			else //ako se ne ispuni uslov, jednostavno prepisujemo citavu liniju iz datoteke sa getline 
 				{
 				br++;
-				pomocna << br;
+				pomocna << br; //na pocetak u id stavljamo vrijednost iz brojaca
 				getline(destinacije, temp);
 				pomocna << temp << std::endl;
 				}
@@ -224,6 +225,10 @@ void Destinacija::izbrisiDestinaciju()
 		}
 
 	}
+	destinacije.close();
+	pomocna.close();
+	remove("destinacije.txt");                 //brise destinacije.txt
+	rename("pomocna.txt", "destinacije.txt");  //mijenja naziv pomocna.txt u destinacije.txt
 }
 /*
 void Destinacija::izbrisiDestinaciju() {
