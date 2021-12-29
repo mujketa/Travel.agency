@@ -248,18 +248,7 @@ void Destinacija::izbrisiDestinaciju() {
 		}
 		else if (temp.substr(0, id.size()) == id) { //ako se poklopi ID u datoteci
 			break;
-		}
-	}
-	destinacije.close();
-	pomocna.close();
-	remove("destinacije.txt");                 //brise destinacije.txt
-	rename("pomocna.txt", "destinacije.txt");  //mijenja naziv pomocna.txt u destinacije.txt
-
-}
-*/
-
-/*
- 	while (!destinacije.eof())
+			 	while (!destinacije.eof())
 			{
 				if (destinacije.eof()) break;
 				else
@@ -278,6 +267,17 @@ void Destinacija::izbrisiDestinaciju() {
 					
 				}
 			}
+		}
+	}
+	destinacije.close();
+	pomocna.close();
+	remove("destinacije.txt");                 //brise destinacije.txt
+	rename("pomocna.txt", "destinacije.txt");  //mijenja naziv pomocna.txt u destinacije.txt
+
+}
+*/
+
+/*
 void Destinacija::izbrisiDestinaciju()
 {
 	Destinacija d;
