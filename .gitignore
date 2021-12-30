@@ -1,0 +1,9 @@
+
+*.db
+*.opendb
+*.db-wal
+*.db-shm
+*.db
+*.ipch
+Project/.vs/Project/v16/.suo
+Project/.vs/Project/v16/Browse.VC.db

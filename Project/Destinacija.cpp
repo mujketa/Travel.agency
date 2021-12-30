@@ -166,6 +166,170 @@ int Destinacija::getBrojOsoba()
 {
 	return Destinacija::brojOsoba;
 }
+void Destinacija::izbrisiDestinaciju()
+{
+	std::string temp, tempp; //u temmp smjestam ono sto treba ispisati u datoteci, a sa tempp preskaacem onaj red koji treba izbrisati
+	int br = 0, id, broj;
+	do {
+		std::cout << "Unesite ID destinacije koju zelite ukloniti:: ";
+		std::cin >> id;
+	} while (id < 0 || id>20);    //ne moze se unijeti prazan string
+	std::ifstream destinacije("destinacije.txt", std::ios::in);
+	std::ofstream pomocna("pomocna.txt"); //treba nam pomocna.txt jer u nju prepisujemo sve podatke iz destinacije.txt, ali bez one destinacije koju smo obrisali
+	if (destinacije.fail()) std::cout << "Nemoguce otvoriti datoteku!" << std::endl;
+	else
+	{
+		std::getline(destinacije, temp); //
+		pomocna << temp << std::endl;
+		std::getline(destinacije, temp); //
+		pomocna << temp << std::endl;
+		std::getline(destinacije, temp); //preskacem prva 3 reda jer u njima se ne nalaze podaci o destinacijama
+		pomocna << temp << std::endl;
+		while (true)
+		{
+			destinacije >> broj; //smjestamo id iz datoteke u broj(int) da bi ga mogli porediti sa id koji smo unijeli
+			if (destinacije.eof()) break; //kad dodje do kraja datoteke prekida while
+			if (broj==id)
+			{
+				br++; //brojac nam treba jer kada obrisemo liniju iz datoteke, u sljedecim linijama id se mora smanjiti za 1, a tu koristimo brojac
+				std::getline(destinacije, tempp); //brisemo liniju iz datoteke tako sto je smjestamo u tempp
+				destinacije >> broj; //smjestam id iz datoteke u broj
+				pomocna << std::left << std::setw(6) << broj-1; //ubacujemo id u sljedecu liniju, ali smanjen za 1, jer smo obrisali destinaciju iznad u datoteci
+				destinacije >> temp;
+				pomocna << std::setw(20) << temp;
+				destinacije >> temp;
+				pomocna << std::setw(23) << temp;
+				destinacije >> temp;
+				pomocna << std::setw(30) << temp;
+				destinacije >> temp;
+				pomocna << std::setw(18) << temp;
+				destinacije >> temp;
+				pomocna << std::setw(18) << temp;
+				destinacije >> temp;
+				pomocna << std::setw(25) << temp;
+				destinacije >> temp;
+				pomocna << std::setw(25) << temp;
+				destinacije >> temp;
+				pomocna << std::setw(20) << temp;
+				pomocna << std::endl;
+			}
+			else //ako se ne ispuni uslov, jednostavno prepisujemo citavu liniju iz datoteke sa getline 
+				{
+				br++;
+				pomocna << br; //na pocetak u id stavljamo vrijednost iz brojaca
+				getline(destinacije, temp);
+				pomocna << temp << std::endl;
+				}
+			
+			
+		}
+
+	}
+	destinacije.close();
+	pomocna.close();
+	remove("destinacije.txt");                 //brise destinacije.txt
+	rename("pomocna.txt", "destinacije.txt");  //mijenja naziv pomocna.txt u destinacije.txt
+}
+/*
+void Destinacija::izbrisiDestinaciju() {
+	std::string id, temp, tempp;
+	int br = -3;
+	do {
+		std::cout << "Unesite ID destinacije koju zelite ukloniti:: ";
+		getline(std::cin, id);
+	} while (id.length() < 1);    //ne moze se unijeti prazan string
+	std::ifstream destinacije("destinacije.txt", std::ios::in);
+	std::ofstream pomocna("pomocna.txt");
+	while (std::getline(destinacije, temp))
+	{
+		if (temp.substr(0, id.size()) != id) { //sve dok je razlicito od ID koji smo unijeli
+			pomocna << temp << std::endl;                //ispisuje liniju u datoteku pomocna.txt
+			br++;
+		}
+		else if (temp.substr(0, id.size()) == id) { //ako se poklopi ID u datoteci
+			break;
+			 	while (!destinacije.eof())
+			{
+				if (destinacije.eof()) break;
+				else
+				{
+					pomocna << std::left << std::setw(6) << br;
+					pomocna << std::setw(20) << temp;
+					pomocna << std::setw(23) << temp;
+					pomocna << std::setw(30) << temp;
+					pomocna << std::setw(18) << temp;
+					pomocna << std::setw(18) << temp;
+					pomocna << std::setw(25) << temp;
+					pomocna << std::setw(25) << temp;
+					pomocna << std::setw(20) << temp;
+					pomocna << std::endl;
+					
+					
+				}
+			}
+		}
+	}
+	destinacije.close();
+	pomocna.close();
+	remove("destinacije.txt");                 //brise destinacije.txt
+	rename("pomocna.txt", "destinacije.txt");  //mijenja naziv pomocna.txt u destinacije.txt
+
+}
+*/
+
+/*
+void Destinacija::izbrisiDestinaciju()
+{
+	Destinacija d;
+	std::cout << d;
+	int ID, br = 0;
+	std::ifstream some("destinacije.txt");
+	std::ofstream pomocna("pomocna.txt");
+	std::cout << "Unesite ID destinacije koju zelite ukloniti: ";
+	std::cin >> ID;
+	std::cin.ignore();
+	if (pomocna.eof()) {
+		pomocna.close();
+		std::ofstream open("pomocna.txt");
+		open << "------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------" << std::endl;
+		open << std::left << std::setw(6) << "ID:" << std::setw(20) << "Grad:" << std::setw(23) << "Drzava:" << std::setw(30) << "Hotel:" << std::setw(18) << "Datum polaska:" << std::setw(18) << "Datum povratka:" << std::setw(25) << "Slobodan broj mjesta:" << std::setw(25) << "Vrsta prijevoza:" << std::setw(20) << "Cijena(KM):" << std::endl;
+		open << "------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------" << std::endl;
+		open.close();
+	}
+	else some.close();
+	std::ofstream unos("pomocna.txt");
+	std::string status;
+	while (!some.eof()) {
+		status = d.getStatusString();
+		some >> d.getGrad();
+		some >> d.getDrzava();
+		some >> d.getHotel();
+		some >> d.getDatumPolaska();
+		some >> d.getDatumPovratka();
+		some >> d.brojOsoba;
+		some >> status;
+		some >> d.cijena;
+		br++;
+		if(br!=ID){
+		unos << std::setw(20) << d.getGrad();
+		unos << std::setw(23) << d.getDrzava();
+		unos << std::setw(30) << d.getHotel();
+		unos << std::setw(18) << d.getDatumPolaska();
+		unos << std::setw(18) << d.getDatumPovratka();
+		unos << std::setw(25) << d.getBrojOsoba();
+		unos << std::setw(25) << d.getStatusString();
+		unos << std::setw(20) << d.getCijena();
+		}
+	}
+	unos.close();
+	some.close();
+	remove("destinacije.txt");
+	rename("pomocna.txt", "destinacije.txt");
+	std::cout << d;
+	*/
+
+
+
 
 /*-------------------OPERATOR ZA UNOS DESTINACIJE U SKLOPU ADMIN MENUA-----------------*/
 std::istream& operator>>(std::istream& stream, Destinacija& d)
@@ -189,7 +353,7 @@ std::istream& operator>>(std::istream& stream, Destinacija& d)
 	std::ifstream unosID("destinacije.txt");
 	std::string mobi;
 	do {
-		std::getline(unosID, mobi);           //ovim omogucujemo da se ID uvijek povecava za 1 prilikom unosenja novog mobitela
+		std::getline(unosID, mobi);           //ovim omogucujemo da se ID uvijek povecava za 1 prilikom unosenja nove destinacije
 		ID++;
 	} while (!unosID.eof());
 	unosID.close();
@@ -227,9 +391,19 @@ std::istream& operator>>(std::istream& stream, Destinacija& d)
 
 	return stream;
 }
-
+/*ISPIS DESTINACIJA*/
 std::ostream& operator<<(std::ostream& stream, Destinacija& d)
 {
+	std::string line;
+	std::ifstream some("destinacije.txt");
+	if (some.is_open())
+	{
+		while (getline(some, line))
+		{
+			stream << line << '\n';
+		}
+		some.close();
+	}
 	return stream;
 }
 

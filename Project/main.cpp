@@ -1,6 +1,7 @@
 #include <iostream>
 
 #include "Destinacija.h"
+#include "Admin.h"
 
 int pocetniMenu()
 {
@@ -25,6 +26,7 @@ int adminMenu()
 	std::cout << "2. Ukloni destinaciju\n";
 	std::cout << "3. Pogledaj destinacije\n";
 	std::cout << "4. Uredi destinacije\n";
+	std::cout << "5. Dodaj admina.\n";
 	std::cout << "5. Kraj\n";
 	do
 	{
@@ -55,7 +57,13 @@ int korisnickiMenu()
 int main()
 {
 	Destinacija dest;
-	std::cin >> dest;
-	dest.setPutnik();
+	//std::cin >> dest;
+	//dest.setPutnik();
+	//Admin a;
+	//a.prijavaAdmina();
+	//a.dodajAdmina();
+	std::cout << dest;
+	dest.izbrisiDestinaciju();
+
 	return 0;
 }
