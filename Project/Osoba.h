@@ -3,14 +3,14 @@
 class Osoba
 {
 private:
-	char ime[30], prezime[30]; // broj
-	std::string email;
+	char ime[30], prezime[30], email[30]; // broj
 	std::string brojKartice;
 	std::string brojTelefona;
 public:
 	Osoba();
-	Osoba(const char* i, const char* p, std::string e, std::string brK, std::string brT);
+	Osoba(const char* i, const char* p, const char* e, std::string brK, std::string brT);
 	Osoba(const Osoba& o);
+	bool ispravanEmail(char* adresa);
 	void setIme();
 	void setPrezime();
 	void setEmail();
@@ -18,7 +18,7 @@ public:
 	void setBrojTelefona();
 	char* getIme();
 	char* getPrezime();
-	std::string getEmail();
+	char* getEmail();
 	std::string getBrojKartice();
 	std::string getBrojTelefona();
 	void smanjiSlobodnoMjesto();

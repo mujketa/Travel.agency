@@ -4,21 +4,23 @@
 #include <fstream>
 #include <cstring>
 #include <string>
+#include <stdio.h>
+#include <string.h>
 
 Osoba::Osoba()
 {
 	strcpy_s(this->ime, "Niko");
 	strcpy_s(this->prezime, "Nikic");
-	this->email = "niko.nikic@gmail.com";
+	strcpy_s(this->email, "niko.nikic@gmail.com");
 	this->brojKartice = "1613000067893214";
 	this->brojTelefona = "061234567";
 }
 
-Osoba::Osoba(const char* i, const char* p, std::string e, std::string brK, std::string brT)
+Osoba::Osoba(const char* i, const char* p, const char* e, std::string brK, std::string brT)
 {
 	strcpy_s(this->ime, i);
 	strcpy_s(this->prezime, p);
-	this->email = e;
+	strcpy_s(this->email, e);
 	this->brojKartice = brK;
 	this->brojTelefona = brT;
 
@@ -27,11 +29,42 @@ Osoba::Osoba(const char* i, const char* p, std::string e, std::string brK, std::
 Osoba::Osoba(const Osoba& o)
 {
 	strcpy_s(this->ime, o.ime);
-	strcpy_s(this->prezime, prezime);
-	this->email = o.email;
+	strcpy_s(this->prezime, o.prezime);
+	strcpy_s(this->email, o.email);
 	this->brojKartice = o.brojKartice;
 	this->brojTelefona = o.brojTelefona;
 }
+
+bool Osoba::ispravanEmail(char* adresa)
+{
+	int br1 = 0, br2 = 0, br3 = 0, duzina = 0;
+	do {
+		duzina++;
+		if (*adresa == '@') {
+			br1++;
+		}
+		adresa++;
+
+	} while (*adresa != '\0');
+
+	adresa -= duzina;
+
+	if (adresa[duzina - 1] == 'a' && adresa[duzina - 2] == 'b' && adresa[duzina - 3] == '.') {
+		br2++;
+	}
+	if (adresa[duzina - 1] == 'm' && adresa[duzina - 2] == 'o' && adresa[duzina - 3] == 'c' && adresa[duzina - 4] == '.') {
+		br3++;
+	}
+	if (br1 == 1 && br2 == 1) {
+		return true;
+	}
+	else if (br1 == 1 && br3 == 1) {
+		return true;
+	}
+	else return false;
+}
+
+
 
 void Osoba::setIme()
 {
@@ -47,8 +80,14 @@ void Osoba::setPrezime()
 
 void Osoba::setEmail()
 {
-	std::cout << "Unesite vas email: ";
-	std::getline(std::cin, this->email);
+	do
+	{
+		std::cout << "Unesite vasu email adresu: ";
+		std::cin.getline(email, 30);
+		if (!ispravanEmail(email)) {
+			std::cout << "Neispravna adresa!\n";
+		}
+	} while (!ispravanEmail(email));
 }
 
 void Osoba::setBrojKartice()
@@ -76,7 +115,7 @@ char* Osoba::getPrezime()
 	return this->prezime;
 }
 
-std::string Osoba::getEmail()
+char* Osoba::getEmail()
 {
 	return this->email;
 }

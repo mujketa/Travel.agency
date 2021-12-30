@@ -58,12 +58,12 @@ int main()
 {
 	Destinacija dest;
 	//std::cin >> dest;
-	//dest.setPutnik();
+	dest.setPutnik();
 	//Admin a;
 	//a.prijavaAdmina();
 	//a.dodajAdmina();
-	std::cout << dest;
-	dest.izbrisiDestinaciju();
+	//std::cout << dest;
+	//dest.izbrisiDestinaciju();
 
 	return 0;
 }
