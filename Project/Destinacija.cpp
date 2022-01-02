@@ -6,7 +6,6 @@
 #include <string>
 #include "Osoba.h"
 
-int Destinacija::brojOsoba = 0;
 
 Destinacija::Destinacija()
 {
@@ -14,6 +13,7 @@ Destinacija::Destinacija()
 	strcpy_s(this->drzava, "BiH");
 	strcpy_s(this->hotel, "Hotel");
 	this->cijena = 0;
+	this->brojOsoba = 0;
 
 }
 
@@ -123,7 +123,8 @@ void Destinacija::setPutnik()
 void Destinacija::setBrojOsoba()
 {
 	std::cout << "Unesite maksimalni broj osoba za putovanje: ";
-	std::cin >> Destinacija::brojOsoba;
+	std::cin >> this->brojOsoba;
+	std::cin.ignore();
 
 }
 
@@ -164,7 +165,7 @@ Prijevoz Destinacija::getPrijevoz()
 
 int Destinacija::getBrojOsoba()
 {
-	return Destinacija::brojOsoba;
+	return this->brojOsoba;
 }
 void Destinacija::izbrisiDestinaciju()
 {
@@ -255,27 +256,31 @@ void Destinacija::pronadjiDestinaciju()
 			getline(unosD, temp);   //
 			for (int i = 0; i < br - 4; i++) { //unos iz datoteke u niz
 				unosD >> nizDestinacija[i].id >> nizDestinacija[i].gradd >> nizDestinacija[i].drzavaa >> nizDestinacija[i].hotel >> nizDestinacija[i].datumPolaska >>
-					nizDestinacija[i].datumPovratka >> nizDestinacija[i].brojj >> nizDestinacija[i].vrsta >> nizDestinacija[i].cijena;
+					nizDestinacija[i].datumPovratka >> nizDestinacija[i].brojOsoba >> nizDestinacija[i].vrsta >> nizDestinacija[i].cijena;
 			}
 	unosD.close();
 	std::string proizv;   //
      //potrebni stringovi za poredjenje sa nizom
-	std::cout << "Unesite destinaciju : ";
+	std::cout << "\n";
+	std::cout << std::setw(24) << " "<<"Unesite destinaciju: ";
 	std::cin >> proizv;
 	int br1 = 0;
 	for (int i = 0; i < br - 4; i++) {
-		if ((strcmp(proizv.c_str(), nizDestinacija[i].gradd.c_str()) == 0 && nizDestinacija[i].brojj > 0) || (strcmp(proizv.c_str(), nizDestinacija[i].drzavaa.c_str()) == 0 && nizDestinacija[i].brojj > 0)) { //provjerava je li mobitel dostupan u datoteci
+		if ((strcmp(proizv.c_str(), nizDestinacija[i].gradd.c_str()) == 0 && nizDestinacija[i].brojOsoba > 0) || (strcmp(proizv.c_str(), nizDestinacija[i].drzavaa.c_str()) == 0 && nizDestinacija[i].brojOsoba > 0)) { //provjerava je li mobitel dostupan u datoteci
 			br1++;
-			std::cout << "\n\t\t\tTrazena destinacija je dostupna.\n" << std::endl;
-			std::cout << std::left << std::setw(13) << "ID: " << nizDestinacija[i].id << std::endl;
-			std::cout << std::left << std::setw(13) << "Grad: " << nizDestinacija[i].gradd << std::endl;
-			std::cout << std::left << std::setw(13) << "Drzava: " << nizDestinacija[i].drzavaa << std::endl;
-			std::cout << std::left << std::setw(13) << "Hotel: " << nizDestinacija[i].hotel << std::endl;
-			std::cout << std::left << std::setw(13) << "Datum polaska: " << nizDestinacija[i].datumPolaska << std::endl;
-			std::cout << std::left << std::setw(13) << "Datum povratka: " << nizDestinacija[i].datumPovratka << std::endl;
-			std::cout << std::left << std::setw(13) << "Slobodan broj mjesta: " << nizDestinacija[i].brojj << std::endl;
-			std::cout << std::left << std::setw(13) << "Vrsta prijevoza: " << nizDestinacija[i].vrsta << std::endl;
-			std::cout << std::left << std::setw(13) << "Cijena: " << nizDestinacija[i].cijena << std::endl;
+			std::cout << "\n\t\t\t----------------------------------" ;
+			std::cout << "\n\t\t\t Trazena destinacija je dostupna." << std::endl;
+			std::cout << "\t\t\t----------------------------------" << std::endl;
+			std::cout << std::left << std::setw(25) << "\t\t\tID: " << nizDestinacija[i].id << std::endl;
+			std::cout << std::left << std::setw(25) << "\t\t\tGrad: " << nizDestinacija[i].gradd << std::endl;
+			std::cout << std::left << std::setw(25) << "\t\t\tDrzava: " << nizDestinacija[i].drzavaa << std::endl;
+			std::cout << std::left << std::setw(25) << "\t\t\tHotel: " << nizDestinacija[i].hotel << std::endl;
+			std::cout << std::left << std::setw(25) << "\t\t\tDatum polaska: " << nizDestinacija[i].datumPolaska << std::endl;
+			std::cout << std::left << std::setw(25) << "\t\t\tDatum povratka: " << nizDestinacija[i].datumPovratka << std::endl;
+			std::cout << std::left << std::setw(25) << "\t\t\tSlobodan broj mjesta: " << nizDestinacija[i].brojOsoba << std::endl;
+			std::cout << std::left << std::setw(25) << "\t\t\tVrsta prijevoza: " << nizDestinacija[i].vrsta << std::endl;
+			std::cout << std::left << std::setw(25) << "\t\t\tCijena: " << nizDestinacija[i].cijena << std::endl;
+			std::cout << "\t\t\t----------------------------------" << std::endl;
 			/*
 			int izbor;
 			std::cout << "\n\t\t\t  ___________________" << std::endl;
@@ -299,9 +304,9 @@ void Destinacija::pronadjiDestinaciju()
 
 
 	if (br1 == 0) { //ako se nisu zadovoljili uslovi znaci da tog mobitela nema u datoteci
-		std::cout << "Trazenu destinaciju trenutno nemamo u ponudi, pogledajte naše ostale ponude!" << std::endl;
-			system("pause");
-			//adminMeni("admin");
+		std::cout << " Trazenu destinaciju trenutno nemamo u ponudi, pogledajte naše ostale ponude!\n\n" ;
+		system("pause");
+		//adminMeni("admin");
 	}
 }
 
@@ -338,8 +343,6 @@ void Destinacija::izbrisiDestinaciju() {
 					pomocna << std::setw(25) << temp;
 					pomocna << std::setw(20) << temp;
 					pomocna << std::endl;
-					
-					
 				}
 			}
 		}

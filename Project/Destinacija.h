@@ -14,7 +14,7 @@ private:
 	char grad[30], drzava[30], hotel[30], datumPolaska[20], datumPovratka[20];
 	float cijena;
 	Prijevoz prijevoz;
-	static int brojOsoba;
+	int brojOsoba;
 public:
 	Destinacija();
 	void setGrad();
@@ -25,7 +25,7 @@ public:
 	void setCijena();
 	void setPrijevoz();
 	void setPutnik();
-	static void setBrojOsoba();
+	void setBrojOsoba();
 	char* getGrad();
 	char* getDrzava();
 	char* getHotel();
@@ -33,7 +33,7 @@ public:
 	char* getDatumPovratka();
 	float getCijena();
 	Prijevoz getPrijevoz();
-	static int getBrojOsoba();// izbrisati
+	int getBrojOsoba();
 	void izbrisiDestinaciju();
 	void pronadjiDestinaciju();
 	friend std::istream& operator>>(std::istream& stream, Destinacija& d);
