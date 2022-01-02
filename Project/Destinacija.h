@@ -9,6 +9,8 @@ class Destinacija
 {
 private:
 	std::vector <Osoba> putnik;
+	int id,brojj;
+	std::string vrsta,gradd,drzavaa;
 	char grad[30], drzava[30], hotel[30], datumPolaska[20], datumPovratka[20];
 	float cijena;
 	Prijevoz prijevoz;
@@ -33,6 +35,7 @@ public:
 	Prijevoz getPrijevoz();
 	static int getBrojOsoba();// izbrisati
 	void izbrisiDestinaciju();
+	void pronadjiDestinaciju();
 	friend std::istream& operator>>(std::istream& stream, Destinacija& d);
 	friend std::ostream& operator<<(std::ostream& stream, Destinacija& d);
 	std::string getStatusString();

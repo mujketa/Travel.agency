@@ -230,6 +230,81 @@ void Destinacija::izbrisiDestinaciju()
 	remove("destinacije.txt");                 //brise destinacije.txt
 	rename("pomocna.txt", "destinacije.txt");  //mijenja naziv pomocna.txt u destinacije.txt
 }
+
+void Destinacija::pronadjiDestinaciju()
+{
+	std::ifstream unosV("destinacije.txt");
+	std::string linija;
+	int br = 0;
+	if (unosV.fail()) {
+		std::cout << "fail";
+	}
+	else {
+		while (!unosV.eof()) {
+			getline(unosV, linija); //unosi liniju po liniju
+			br++;                   //jer nam je potreban brojac
+		}
+	}
+	unosV.close();
+
+	unosV.open("destinacije.txt", std::ios::in);
+	Destinacija* nizMobitela = new Destinacija[br]; //pravimo niz jer nam treba da provjerimo da li se mobitel nalazi na stanju
+		std::string temp;
+			getline(unosV, temp);   //
+			getline(unosV, temp);   //preskacemo prve 3 linije
+			getline(unosV, temp);   //
+			for (int i = 0; i < br - 4; i++) { //unos iz datoteke u niz
+				unosV >> nizMobitela[i].id >> nizMobitela[i].gradd >> nizMobitela[i].drzavaa >> nizMobitela[i].hotel >> nizMobitela[i].datumPolaska >>
+					nizMobitela[i].datumPovratka >> nizMobitela[i].brojOsoba >> nizMobitela[i].vrsta >> nizMobitela[i].cijena;
+			}
+	unosV.close();
+	std::string proizv;   //
+     //potrebni stringovi za poredjenje sa nizom
+	std::cout << "Unesite destinaciju : ";
+	std::cin >> proizv;
+	int br1 = 0;
+	for (int i = 0; i < br - 4; i++) {
+		if ((strcmp(proizv.c_str(), nizMobitela[i].gradd.c_str()) == 0) && (nizMobitela[i].brojOsoba > 0) || (strcmp(proizv.c_str(), nizMobitela[i].drzavaa.c_str()) == 0) && (nizMobitela[i].brojOsoba > 0)) { //provjerava je li mobitel dostupan u datoteci
+			br1++;
+			std::cout << "\n\t\t\tTrazena destinacija je dostupna.\n" << std::endl;
+			std::cout << std::left << std::setw(13) << "ID: " << nizMobitela[i].id << std::endl;
+			std::cout << std::left << std::setw(13) << "Grad: " << nizMobitela[i].gradd << std::endl;
+			std::cout << std::left << std::setw(13) << "Drzava: " << nizMobitela[i].drzavaa << std::endl;
+			std::cout << std::left << std::setw(13) << "Hotel: " << nizMobitela[i].hotel << std::endl;
+			std::cout << std::left << std::setw(13) << "Datum polaska: " << nizMobitela[i].datumPolaska << std::endl;
+			std::cout << std::left << std::setw(13) << "Datum povratka: " << nizMobitela[i].datumPovratka << std::endl;
+			std::cout << std::left << std::setw(13) << "Slobodan broj mjesta: " << nizMobitela[i].brojOsoba << std::endl;
+			std::cout << std::left << std::setw(13) << "Vrsta prijevoza: " << nizMobitela[i].vrsta << std::endl;
+			std::cout << std::left << std::setw(13) << "Cijena: " << nizMobitela[i].cijena << std::endl;
+			/*
+			int izbor;
+			std::cout << "\n\t\t\t  ___________________" << std::endl;
+			std::cout << "\t\t\t  |                 |" << std::endl;
+			std::cout << "\t\t\t  | 1. Kupi artikal |" << std::endl;
+			std::cout << "\t\t\t  | 0. Nazad        |" << std::endl;
+			std::cout << "\t\t\t  |_________________|\n" << std::endl;
+			do {
+				std::cout << "\nIzbor: ";
+				std::cin >> izbor;
+			} while (izbor < 0 || izbor>1);
+			switch (izbor) {
+			case 1:
+				//KupiArtikal();
+			case 0:
+				//korisnickiMenu("korisnik");
+			}*/
+
+		}
+	}
+
+
+	if (br1 == 0) { //ako se nisu zadovoljili uslovi znaci da tog mobitela nema u datoteci
+		std::cout << "Trazenu destinaciju trenutno nemamo u ponudi, pogledajte naše ostale ponude!" << std::endl;
+			system("pause");
+			//adminMeni("admin");
+	}
+}
+
 /*
 void Destinacija::izbrisiDestinaciju() {
 	std::string id, temp, tempp;
