@@ -255,7 +255,7 @@ void Destinacija::pronadjiDestinaciju()
 			getline(unosV, temp);   //
 			for (int i = 0; i < br - 4; i++) { //unos iz datoteke u niz
 				unosV >> nizMobitela[i].id >> nizMobitela[i].gradd >> nizMobitela[i].drzavaa >> nizMobitela[i].hotel >> nizMobitela[i].datumPolaska >>
-					nizMobitela[i].datumPovratka >> nizMobitela[i].brojOsoba >> nizMobitela[i].vrsta >> nizMobitela[i].cijena;
+					nizMobitela[i].datumPovratka >> nizMobitela[i].brojj >> nizMobitela[i].vrsta >> nizMobitela[i].cijena;
 			}
 	unosV.close();
 	std::string proizv;   //
@@ -264,7 +264,7 @@ void Destinacija::pronadjiDestinaciju()
 	std::cin >> proizv;
 	int br1 = 0;
 	for (int i = 0; i < br - 4; i++) {
-		if ((strcmp(proizv.c_str(), nizMobitela[i].gradd.c_str()) == 0) && (nizMobitela[i].brojOsoba > 0) || (strcmp(proizv.c_str(), nizMobitela[i].drzavaa.c_str()) == 0) && (nizMobitela[i].brojOsoba > 0)) { //provjerava je li mobitel dostupan u datoteci
+		if ((strcmp(proizv.c_str(), nizMobitela[i].gradd.c_str()) == 0 && nizMobitela[i].brojj > 0) || (strcmp(proizv.c_str(), nizMobitela[i].drzavaa.c_str()) == 0 && nizMobitela[i].brojj > 0)) { //provjerava je li mobitel dostupan u datoteci
 			br1++;
 			std::cout << "\n\t\t\tTrazena destinacija je dostupna.\n" << std::endl;
 			std::cout << std::left << std::setw(13) << "ID: " << nizMobitela[i].id << std::endl;
@@ -273,7 +273,7 @@ void Destinacija::pronadjiDestinaciju()
 			std::cout << std::left << std::setw(13) << "Hotel: " << nizMobitela[i].hotel << std::endl;
 			std::cout << std::left << std::setw(13) << "Datum polaska: " << nizMobitela[i].datumPolaska << std::endl;
 			std::cout << std::left << std::setw(13) << "Datum povratka: " << nizMobitela[i].datumPovratka << std::endl;
-			std::cout << std::left << std::setw(13) << "Slobodan broj mjesta: " << nizMobitela[i].brojOsoba << std::endl;
+			std::cout << std::left << std::setw(13) << "Slobodan broj mjesta: " << nizMobitela[i].brojj << std::endl;
 			std::cout << std::left << std::setw(13) << "Vrsta prijevoza: " << nizMobitela[i].vrsta << std::endl;
 			std::cout << std::left << std::setw(13) << "Cijena: " << nizMobitela[i].cijena << std::endl;
 			/*
