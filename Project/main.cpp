@@ -3,6 +3,7 @@
 
 #include "Destinacija.h"
 #include "Admin.h"
+#include "Putnik.h"
 
 int pocetniMenu()
 {
@@ -78,15 +79,23 @@ int main()
 {
 	//adminMenu();
 	Destinacija dest;
-	//std::cin >> dest;
 	//dest.setPutnik();
 	system("cls");
-	dest.pronadjiDestinaciju();
+	int id;
+	//dest.pronadjiDestinaciju();
 	//Admin a;
 	//a.prijavaAdmina();
 	//a.dodajAdmina();
+	//std::cin >> dest;
 	//std::cout << dest;
+	//std::cout << "ID za umanjivanje: ";
+	//std::cin >> id;
+	//std::cin.ignore();
 	//dest.izbrisiDestinaciju();
-
+	//dest.smanjiSlobodnoMjesto(id);
+	Putnik p;
+	//p.setPutnik();
+	p.setDestinacija();
+	std::cout << dest;
 	return 0;
 }

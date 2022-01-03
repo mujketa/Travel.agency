@@ -143,11 +143,13 @@
     <ClCompile Include="Destinacija.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Osoba.cpp" />
+    <ClCompile Include="Putnik.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Admin.h" />
     <ClInclude Include="Destinacija.h" />
     <ClInclude Include="Osoba.h" />
+    <ClInclude Include="Putnik.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

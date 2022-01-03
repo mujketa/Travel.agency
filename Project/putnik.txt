@@ -5,3 +5,5 @@ ID:   Ime:                Prezime:               Email:                        B
 2     gfhgfh              fghf                   fghgfhfg                      1613000067893214  1234567891234567  
 3     dfgfdg              dfgfd                  hamza@gmail.ba                1613000067893214  1234567890123456  
 4     lkfdhfdg            gbdfgf                 fdgdfsgdf@yahoo.com           1613000067893214  1234567890123456  
+5     Berina              Jahic                  berina.jahic.20@size.ba       1613000067893214  1234567899812345  
+6     Sumeja              Jasic                  sumejja@gmail.com             1613000067893214  1234534253214356  

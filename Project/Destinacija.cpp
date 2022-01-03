@@ -4,6 +4,7 @@
 #include <cstring>
 #include <iomanip>
 #include <string>
+#include <vector>
 #include "Osoba.h"
 
 
@@ -66,7 +67,7 @@ void Destinacija::setPrijevoz()
 	this->prijevoz = static_cast<Prijevoz>(*x); // this->prijevoz = Prijevoz(*x);
 }
 
-void Destinacija::setPutnik()
+/*void Destinacija::setPutnik()
 
 	{
 		Osoba o;
@@ -116,7 +117,7 @@ void Destinacija::setPutnik()
 		}
 		unos.close();
 
-	}
+	}*/
 
 
 
@@ -165,7 +166,7 @@ Prijevoz Destinacija::getPrijevoz()
 
 int Destinacija::getBrojOsoba()
 {
-	return this->brojOsoba;
+	return this->brojOsoba; 
 }
 void Destinacija::izbrisiDestinaciju()
 {
@@ -307,6 +308,52 @@ void Destinacija::pronadjiDestinaciju()
 		std::cout << " Trazenu destinaciju trenutno nemamo u ponudi, pogledajte naše ostale ponude!\n\n" ;
 		system("pause");
 		//adminMeni("admin");
+	}
+}
+
+void Destinacija::smanjiSlobodnoMjesto(int id)
+{
+	std::string temp,grad,hotel,polazak,povratak,prijevoz;
+	int i = 1, brojOsoba,id1;
+	float cijena;
+	std::ifstream destinacije("destinacije.txt", std::ios::in);
+	std::ofstream pomocna("pomocna.txt"); //treba nam pomocna.txt jer u nju prepisujemo sve podatke iz destinacije.txt, ali bez one destinacije koju smo obrisali
+	if (destinacije.fail()) std::cout << "Nemoguce otvoriti datoteku!" << std::endl;
+	else
+	{
+		std::getline(destinacije, temp); //
+		pomocna << temp << std::endl;
+		std::getline(destinacije, temp); //
+		pomocna << temp << std::endl;
+		std::getline(destinacije, temp); //preskacem prva 3 reda jer u njima se ne nalaze podaci o destinacijama
+		pomocna << temp << std::endl;
+		while (true)
+		{
+			if (destinacije.eof()) break; //kad dodje do kraja datoteke prekida while
+			if (i == id)
+			{
+				destinacije >> id1 >> grad >> drzava >> hotel >>polazak >> povratak >>brojOsoba >> prijevoz >> cijena;
+				pomocna << std::left << std::setw(6) << i << std::setw(20) <<grad << std::setw(23) << drzava << std::setw(30) << hotel 
+					    << std::setw(18) << polazak << std::setw(18) << povratak << std::setw(25) << brojOsoba-1 << std::setw(25) << prijevoz 
+					    << std::setw(20) << cijena;
+			}
+			else //ako se ne ispuni uslov, jednostavno prepisujemo citavu liniju iz datoteke sa getline 
+			{
+				getline(destinacije, temp);
+				pomocna << temp << std::endl;
+			}
+			i++;
+		}
+	}
+	destinacije.close();
+	pomocna.close();
+	remove("destinacije.txt");                 //brise destinacije.txt
+	rename("pomocna.txt", "destinacije.txt");
+	if (id > i) {
+		std::cout << "ID koji ste unijeli je izvan ranga ponudenih ID!!!\n";
+	}
+	else {
+		std::cout << "Rezervacija je uspjesna! \n";
 	}
 }
 

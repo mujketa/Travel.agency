@@ -21,7 +21,6 @@ public:
 	char* getEmail();
 	std::string getBrojKartice();
 	std::string getBrojTelefona();
-	void smanjiSlobodnoMjesto();
 	friend std::istream& operator>>(std::istream& stream, Osoba& o);
 	friend std::ostream& operator<<(std::ostream& stream, Osoba& o);
 
