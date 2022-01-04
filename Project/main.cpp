@@ -88,10 +88,7 @@ int main()
 	//a.dodajAdmina();
 	//std::cin >> dest;
 	//std::cout << dest;
-	//std::cout << "ID za umanjivanje: ";
-	//std::cin >> id;
-	//std::cin.ignore();
-	//dest.izbrisiDestinaciju();
+	//dest.izbrisiDestinaciju()
 	//dest.smanjiSlobodnoMjesto(id);
 	Putnik p;
 	//p.setPutnik();

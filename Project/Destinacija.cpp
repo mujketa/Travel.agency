@@ -316,6 +316,7 @@ void Destinacija::smanjiSlobodnoMjesto(int id)
 	std::string temp,grad,hotel,polazak,povratak,prijevoz;
 	int i = 1, brojOsoba,id1;
 	float cijena;
+	bool moze = true;
 	std::ifstream destinacije("destinacije.txt", std::ios::in);
 	std::ofstream pomocna("pomocna.txt"); //treba nam pomocna.txt jer u nju prepisujemo sve podatke iz destinacije.txt, ali bez one destinacije koju smo obrisali
 	if (destinacije.fail()) std::cout << "Nemoguce otvoriti datoteku!" << std::endl;
@@ -333,9 +334,17 @@ void Destinacija::smanjiSlobodnoMjesto(int id)
 			if (i == id)
 			{
 				destinacije >> id1 >> grad >> drzava >> hotel >>polazak >> povratak >>brojOsoba >> prijevoz >> cijena;
-				pomocna << std::left << std::setw(6) << i << std::setw(20) <<grad << std::setw(23) << drzava << std::setw(30) << hotel 
-					    << std::setw(18) << polazak << std::setw(18) << povratak << std::setw(25) << brojOsoba-1 << std::setw(25) << prijevoz 
-					    << std::setw(20) << cijena;
+				if (brojOsoba >= 1) {
+					pomocna << std::left << std::setw(6) << i << std::setw(20) << grad << std::setw(23) << drzava << std::setw(30) << hotel
+						<< std::setw(18) << polazak << std::setw(18) << povratak << std::setw(25) << brojOsoba - 1 << std::setw(25) << prijevoz
+						<< std::setw(20) << cijena;
+				}
+				else {
+					pomocna << std::left << std::setw(6) << i << std::setw(20) << grad << std::setw(23) << drzava << std::setw(30) << hotel
+						<< std::setw(18) << polazak << std::setw(18) << povratak << std::setw(25) << brojOsoba << std::setw(25) << prijevoz
+						<< std::setw(20) << cijena;
+					moze = false;
+				}
 			}
 			else //ako se ne ispuni uslov, jednostavno prepisujemo citavu liniju iz datoteke sa getline 
 			{
@@ -352,8 +361,11 @@ void Destinacija::smanjiSlobodnoMjesto(int id)
 	if (id > i) {
 		std::cout << "ID koji ste unijeli je izvan ranga ponudenih ID!!!\n";
 	}
-	else {
+	else if(i>1 && moze) {
 		std::cout << "Rezervacija je uspjesna! \n";
+	}
+	else if (!moze) {
+		std::cout << "Sva slobodna mjesta za zeljenu destinaciju su popunjena!!!\n";
 	}
 }
 
