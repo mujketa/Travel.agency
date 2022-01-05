@@ -1,9 +1,9 @@
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 ID:   Grad:               Drzava:                Hotel:                        Datum polaska:    Datum povratka:   Slobodan broj mjesta:    Vrsta prijevoza:         Cijena(KM):         
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-1     paris               france                 keptet                        01.06.2011.       01.06.2011.       120                      Avion                    550                 
+1     paris               france                 keptet                        01.06.2011.       01.06.2011.       119                      Avion                    550                                  
 2     kairo               egipat                 sdgfdg                        2353245           3453453           54                       Avion                    546                 
-3     washington          usa                    trump                         4364356           235346            60                       Avion                    1200                
+3     washington          usa                    trump                         4364356           235346            59                       Avion                    1200                                
 4     sarajevo            bih                    swiss                         32564536          345534            0                        Autobus                  150                                  
 5     paris               france                 keptet                        01.06.2011.       01.06.2011.       120                      Avion                    550                 
 6     kairo               egipat                 sdgfdg                        2353245           3453453           54                       Avion                    546                 
@@ -13,4 +13,6 @@ ID:   Grad:               Drzava:                Hotel:                        D
 10    mostar              bosnia                 dfhfg                         534654            45654             45                       Avion                    45                  
 11    beograd             srbija                 sdgfdg                        54654             65456             56                       Autobus                  546                 
 12    zagreb              croatia                hdfdg                         43534             345345            0                        Avion                    56                  
+
+
 

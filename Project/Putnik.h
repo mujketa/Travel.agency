@@ -4,9 +4,14 @@ class Putnik :
     public Osoba
 {
 public:
-    ~Putnik();
+    std::string brojKartice;
+    Putnik();
+    Putnik(std::string brK);
+    //Putnik(const Putnik& p);
     void setPutnik();
     void setDestinacija();
-    Putnik() = default;
+    void setBrojKartice();
+    std::string getBrojKartice();
+    ~Putnik() = default;
 };
 

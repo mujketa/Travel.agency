@@ -1,3 +1,3 @@
-﻿  Destinacija.cpp
-C:\Users\PC\Documents\GitHub\Travel.agency\Project\Destinacija.cpp(560): warning C4715: 'Destinacija::getStatusString': not all control paths return a value
-  Project.vcxproj -> C:\Users\PC\Documents\GitHub\Travel.agency\Project\Debug\Project.exe
+﻿  main.cpp
+C:\Users\PCHARDWARE\Desktop\Travel.agency\Project\main.cpp(83,6): warning C4101: 'id': unreferenced local variable
+  Project.vcxproj -> C:\Users\PCHARDWARE\Desktop\Travel.agency\Project\Debug\Project.exe

@@ -79,7 +79,6 @@ int main()
 {
 	//adminMenu();
 	Destinacija dest;
-	//dest.setPutnik();
 	system("cls");
 	int id;
 	//dest.pronadjiDestinaciju();
@@ -91,8 +90,8 @@ int main()
 	//dest.izbrisiDestinaciju()
 	//dest.smanjiSlobodnoMjesto(id);
 	Putnik p;
-	//p.setPutnik();
-	p.setDestinacija();
-	std::cout << dest;
+	p.setPutnik();
+	//p.setDestinacija();
+	//std::cout << dest;
 	return 0;
 }

@@ -9,11 +9,7 @@
 
 Osoba::Osoba()
 {
-	strcpy_s(this->ime, "Niko");
-	strcpy_s(this->prezime, "Nikic");
-	strcpy_s(this->email, "niko.nikic@gmail.com");
-	this->brojKartice = "1613000067893214";
-	this->brojTelefona = "061234567";
+
 }
 
 Osoba::Osoba(const char* i, const char* p, const char* e, std::string brK, std::string brT)
@@ -21,7 +17,6 @@ Osoba::Osoba(const char* i, const char* p, const char* e, std::string brK, std::
 	strcpy_s(this->ime, i);
 	strcpy_s(this->prezime, p);
 	strcpy_s(this->email, e);
-	this->brojKartice = brK;
 	this->brojTelefona = brT;
 
 }
@@ -31,7 +26,6 @@ Osoba::Osoba(const Osoba& o)
 	strcpy_s(this->ime, o.ime);
 	strcpy_s(this->prezime, o.prezime);
 	strcpy_s(this->email, o.email);
-	this->brojKartice = o.brojKartice;
 	this->brojTelefona = o.brojTelefona;
 }
 
@@ -90,14 +84,6 @@ void Osoba::setEmail()
 	} while (!ispravanEmail(email));
 }
 
-void Osoba::setBrojKartice()
-{
-	do
-	{
-		std::cout << "Unesite vas broj racuna: ";
-		std::getline(std::cin, this->brojKartice);
-	} while (this->brojKartice.length() != 16);
-}
 
 void Osoba::setBrojTelefona()
 {
@@ -120,14 +106,10 @@ char* Osoba::getEmail()
 	return this->email;
 }
 
-std::string Osoba::getBrojKartice()
-{
-	return this->brojKartice;
-}
 
 std::string Osoba::getBrojTelefona()
 {
-	return this->brojKartice;
+	return this->brojTelefona;
 }
 
 /*
@@ -209,13 +191,12 @@ std::istream& operator>>(std::istream& stream, Osoba& o)
 	o.setPrezime();
 	o.setEmail();
 	o.setBrojTelefona();
-	o.setBrojKartice();
 	return stream;
 }
 
 
 std::ostream& operator<<(std::ostream& stream, Osoba& o)
 {
-	stream << o.getIme() << " " << o.getPrezime() << " " << o.getEmail() << " " << o.getBrojTelefona() << " " << o.getBrojKartice() << "\n";
+	stream << o.getIme() << " " << o.getPrezime() << " " << o.getEmail() << " " << o.getBrojTelefona() << "\n";
 	return stream;
 }

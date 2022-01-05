@@ -3,8 +3,33 @@
 #include <iostream>
 #include <iomanip>
 #include "Destinacija.h"
-Putnik::~Putnik()
+
+Putnik::Putnik()
 {
+}
+
+Putnik::Putnik(std::string brK)
+{
+	this->brojKartice = brK;
+}
+
+/*Putnik::Putnik(const Putnik& p)
+{
+	this->brojKartice = p.brojKartice;
+}*/
+
+void Putnik::setBrojKartice()
+{
+	do
+	{
+		std::cout << "Unesite vas broj racuna: ";
+		std::getline(std::cin, this->brojKartice);
+	} while (this->brojKartice.length() != 16);
+}
+
+std::string Putnik::getBrojKartice()
+{
+	return this->brojKartice;
 }
 
 void Putnik::setPutnik()
@@ -66,3 +91,4 @@ void Putnik::setDestinacija()
 	std::cin.ignore();
 	dest.smanjiSlobodnoMjesto(id);
 }
+
