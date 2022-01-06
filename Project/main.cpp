@@ -91,7 +91,7 @@ int main()
 	//dest.smanjiSlobodnoMjesto(id);
 	Putnik p;
 	p.setPutnik();
-	//p.setDestinacija();
+	p.setDestinacija();
 	//std::cout << dest;
 	return 0;
 }
