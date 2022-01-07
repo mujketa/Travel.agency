@@ -86,10 +86,11 @@ int izborZakorisnickiMenu()
 	std::cout << std::setw(10) << " " << std::setw(1) << "======================================\n";
 	std::cout << std::setw(10) << " " << "|*|" << std::setw(35) << "|*|" << std::endl;
 	std::cout << std::setw(10) << " " << "|*| \t1. Ponuda destinacija" << std::setw(11) << "|*|" << std::endl;
-	std::cout << std::setw(10) << " " << "|*| \t2. Pretraga po destinaciji" << std::setw(15) << "|*|" << std::endl;
-	std::cout << std::setw(10) << " " << "|*| \t3. Rezervacija " << std::setw(34) << "|*|" << std::endl;
+	std::cout << std::setw(10) << " " << "|*| \t2. Pretraga po destinaciji" << std::setw(6) << "|*|" << std::endl;
+	std::cout << std::setw(10) << " " << "|*| \t3. Rezervacija" << std::setw(18) << "|*|" << std::endl;
 	std::cout << std::setw(10) << " " << "|*| \t4. Pretraga po cijeni" << std::setw(11) << "|*|" << std::endl;
-	std::cout << std::setw(10) << " " << "|*| \t5. Kraj" << std::setw(25) << "|*|" << std::endl;
+	std::cout << std::setw(10) << " " << "|*| \t5. Odaberite cjenovni rang" << std::setw(6) << "|*|" << std::endl;
+	std::cout << std::setw(10) << " " << "|*| \t6. Kraj" << std::setw(25) << "|*|" << std::endl;
 	std::cout << std::setw(10) << " " << "|*|" << std::setw(35) << "|*|" << std::endl;
 	std::cout << std::setw(10) << " " << std::setw(1) << "======================================\n";
 
@@ -125,6 +126,11 @@ void korisnickiMenu() {
 			system("pause");
 			break;
 		case 5:
+			system("cls");
+			dest.sortirajPoCijeniMinMax();
+			system("pause");
+			break;
+		case 6:
 			break;
 		}
 		system("pause");
