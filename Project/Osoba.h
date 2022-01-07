@@ -3,8 +3,7 @@
 class Osoba
 {
 private:
-	char ime[30], prezime[30], email[30]; // broj
-	std::string brojKartice;
+	char ime[30], prezime[30], email[30]; 
 	std::string brojTelefona;
 public:
 	Osoba();
@@ -14,14 +13,11 @@ public:
 	void setIme();
 	void setPrezime();
 	void setEmail();
-	void setBrojKartice();
 	void setBrojTelefona();
 	char* getIme();
 	char* getPrezime();
 	char* getEmail();
-	std::string getBrojKartice();
 	std::string getBrojTelefona();
-	void smanjiSlobodnoMjesto();
 	friend std::istream& operator>>(std::istream& stream, Osoba& o);
 	friend std::ostream& operator<<(std::ostream& stream, Osoba& o);
 

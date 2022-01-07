@@ -1,18 +1,20 @@
 #pragma once
 #include <iostream>
 #include <vector>
-#include "Osoba.h"
+#include "Putnik.h"
 
 enum Prijevoz { autobus, avion };
 
 class Destinacija
 {
 private:
-	std::vector <Osoba> putnik;
+	//std::vector <Putnik> putnik;
+	int id,brojj;
+	std::string vrsta,gradd,drzavaa;
 	char grad[30], drzava[30], hotel[30], datumPolaska[20], datumPovratka[20];
 	float cijena;
 	Prijevoz prijevoz;
-	static int brojOsoba;
+	int brojOsoba;
 public:
 	Destinacija();
 	void setGrad();
@@ -22,8 +24,8 @@ public:
 	void setDatumPovratka();
 	void setCijena();
 	void setPrijevoz();
-	void setPutnik();
-	static void setBrojOsoba();
+	//void setPutnik();
+	void setBrojOsoba();
 	char* getGrad();
 	char* getDrzava();
 	char* getHotel();
@@ -31,8 +33,10 @@ public:
 	char* getDatumPovratka();
 	float getCijena();
 	Prijevoz getPrijevoz();
-	static int getBrojOsoba();// izbrisati
+	int getBrojOsoba();
 	void izbrisiDestinaciju();
+	void pronadjiDestinaciju();
+	void smanjiSlobodnoMjesto(int id);
 	friend std::istream& operator>>(std::istream& stream, Destinacija& d);
 	friend std::ostream& operator<<(std::ostream& stream, Destinacija& d);
 	std::string getStatusString();
