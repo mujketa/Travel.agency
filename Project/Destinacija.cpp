@@ -311,6 +311,54 @@ void Destinacija::pronadjiDestinaciju()
 	}
 }
 
+void Destinacija::sortirajPoCijeni()
+{
+	std::ifstream dest("destinacije.txt");
+	std::string red;
+	int br = 0;
+	if (dest.fail()) std::cout << "Nemoguce pristupiti!!";
+	else {
+		while (!dest.eof()) {
+			getline(dest, red); 
+			br++;                  
+		}
+	}
+	dest.close();
+	dest.open("destinacije.txt", std::ios::in);
+	Destinacija* nizDestinacija = new Destinacija[br]; //niz jer nam treba da smjestimo podatke
+		std::string temp;
+			getline(dest, temp);   //
+			getline(dest, temp);   //preskacemo prve 3 linije
+			getline(dest, temp);   //
+			for (int i = 0; i < br - 4; i++) { //unos iz datoteke u niz
+				dest >> nizDestinacija[i].id >> nizDestinacija[i].grad >> nizDestinacija[i].drzava >> nizDestinacija[i].hotel >> nizDestinacija[i].datumPolaska >>
+					nizDestinacija[i].datumPovratka >> nizDestinacija[i].brojOsoba >> nizDestinacija[i].vrsta >> nizDestinacija[i].cijena;
+			}
+	dest.close();
+	std::cout << "\n\t\t\t----------------------------------";
+	std::cout << std::setw(24) << " Sortirano po cijeni : ";
+	std::cout << "\t\t\t----------------------------------" << std::endl;
+	int br1 = 0;
+	for (int i = 0; i < br - 4; i++) {
+		for (int j = 1; j < br - 4; j++) {
+			if (nizDestinacija[i].cijena < nizDestinacija[j].cijena) {
+				std::cout << std::left << std::setw(25) << "\t\t\tID: " << nizDestinacija[i].id << std::endl;
+				std::cout << std::left << std::setw(25) << "\t\t\tGrad: " << nizDestinacija[i].grad << std::endl;
+				std::cout << std::left << std::setw(25) << "\t\t\tDrzava: " << nizDestinacija[i].drzava << std::endl;
+				std::cout << std::left << std::setw(25) << "\t\t\tHotel: " << nizDestinacija[i].hotel << std::endl;
+				std::cout << std::left << std::setw(25) << "\t\t\tDatum polaska: " << nizDestinacija[i].datumPolaska << std::endl;
+				std::cout << std::left << std::setw(25) << "\t\t\tDatum povratka: " << nizDestinacija[i].datumPovratka << std::endl;
+				std::cout << std::left << std::setw(25) << "\t\t\tSlobodan broj mjesta: " << nizDestinacija[i].brojOsoba << std::endl;
+				std::cout << std::left << std::setw(25) << "\t\t\tVrsta prijevoza: " << nizDestinacija[i].vrsta << std::endl;
+				std::cout << std::left << std::setw(25) << "\t\t\tCijena: " << nizDestinacija[i].cijena << std::endl;
+				std::cout << "\t\t\t----------------------------------" << std::endl;
+				i++;
+			}
+		}
+	}
+	system("pause");
+}
+
 void Destinacija::smanjiSlobodnoMjesto(int id)
 {
 	std::string temp,grad,hotel,polazak,povratak,prijevoz;

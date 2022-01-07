@@ -59,32 +59,34 @@ int adminMenu()
 	do
 	{
 		std::cout << std::setw(17)<< " Izbor: ";
-
 		std::cin >> izbor;
 		switch (izbor)
 		{
-		case 1:
-			dest.
-			break;
-		case 2:
-			o.smjestiPacijenta();
-			break;
-		case 3:
-			o.rezervisiKrevet();
-			break;
-		case 4:
-			std::cout << o;
-			std::cout << "Unesite broj kreveta za odjavu: ";
-			std::cin >> *n;
-			std::cin.ignore();
-			o.oslobodiKrevet(*n - 1);
-			break;
-		case 5:
-			std::cout << "Hvala i dovidjenja!";
-			break;
+			case 1:
+			
+				break;
+			case 2:
+				d.izbrisiDestinaciju();
+				break;
+			case 3:
+			
+				break;
+			case 4:
+				std::cout << a;
+				std::cout << " ";
+				//std::cin >> *n;
+				std::cin.ignore();
+			
+				break;
+			case 5:
+				a.dodajAdmina();
+				break;
+			case 6:
+				std::cout << "Zahvaljujemo se na unosu!";
+				break;
 		}
 		system("pause");
-	} while (izbor < 1 || izbor>5);
+	} while (izbor < 1 || izbor>6);
 	std::cin.ignore();
 	return izbor;
 }
@@ -98,6 +100,7 @@ int korisnickiMenu()
 	std::cout << std::setw(10) << " " << "|*| \t2. Pretraga" << std::setw(21) << "|*|" << std::endl;
 	std::cout << std::setw(10) << " " << "|*| \t3. Prijava?" << std::setw(21) << "|*|" << std::endl;
 	std::cout << std::setw(10) << " " << "|*| \t4. Placanje??" << std::setw(19) << "|*|" << std::endl;
+	std::cout << std::setw(10) << " " << "|*| \t5. Ponuda po cijeni" << std::setw(13) << "|*|" << std::endl;
 	std::cout << std::setw(10) << " " << "|*| \t6. Kraj" << std::setw(25) << "|*|" << std::endl;
 	std::cout << std::setw(10) << " " << "|*|" << std::setw(35) << "|*|" << std::endl;
 	std::cout << std::setw(10) << " " << std::setw(1) << "======================================\n";
@@ -106,7 +109,33 @@ int korisnickiMenu()
 	{
 		std::cout << std::setw(17) << "Izbor: ";
 		std::cin >> izbor;
-	} while (izbor < 1 || izbor>5);
+		switch (izbor)
+		{
+			case 1:
+
+				break;
+			case 2:
+				d.pronadjiDestinaciju();
+				break;
+			case 3:
+
+				break;
+			case 4:
+				std::cout << a;
+				std::cout << " ";
+				//std::cin >> *n;
+				std::cin.ignore();
+				break;
+			case 5:
+				d.sortirajPoCijeni();
+				break;
+			case 6:
+				std::cout << "Zahvaljujemo se na unosu!";
+				break;
+			}
+			system("pause");
+		}
+	} while (izbor < 1 || izbor>6);
 	std::cin.ignore();
 	return izbor;
 }
@@ -114,20 +143,20 @@ int korisnickiMenu()
 int main()
 {
 	//adminMenu();
-	Destinacija dest;
+	Destinacija d;
 	system("cls");
 	int id;
-	//dest.pronadjiDestinaciju();
+	//d.pronadjiDestinaciju();
 	//Admin a;
 	//a.prijavaAdmina();
 	//a.dodajAdmina();
 	//std::cin >> dest;
 	//std::cout << dest;
-	//dest.izbrisiDestinaciju()
-	//dest.smanjiSlobodnoMjesto(id);
+	//d.izbrisiDestinaciju()
+	//d.smanjiSlobodnoMjesto(id);
 	Putnik p;
 	p.setPutnik();
 	p.setDestinacija();
-	//std::cout << dest;
+	//std::cout << d;
 	return 0;
 }
