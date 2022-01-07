@@ -9,24 +9,9 @@ ID:   Grad:               Drzava:                Hotel:                        D
 6     kairo               egipat                 sdgfdg                        2353245           3453453           54                       Avion                    546                 
 7     miami               usa                    trump                         4364356           235346            59                       Avion                    1200                                
 8     zenica              bih                    swiss                         32564536          345534            39                       Autobus                  150                                  
-9     madrid              spain                  nesto                         43564             3456436           41                       Avion                    600                                                                                  
+9     madrid              spain                  nesto                         43564             3456436           41                       Avion                    600                                                                          
 10    mostar              bosnia                 dfhfg                         534654            45654             43                       Avion                    45                                                      
 11    beograd             srbija                 sdgfdg                        54654             65456             55                       Autobus                  546                                  
-12    zagreb              croatia                hdfdg                         43534             345345            0                        Avion                    56                                    
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+12    zagreb              croatia                hdfdg                         43534             345345            0                        Avion                    56                
+13    hdjd                jdjdf                  hdkdk                         344               33                4                        Avion                    3333                                
+14    hjdj                jdkfk                  jsksksd                       fjfkf             hdkdf             55                       Avion                    44                  

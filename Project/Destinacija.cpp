@@ -349,13 +349,9 @@ std::istream& operator>>(std::istream& stream, Destinacija& d)
 		unos << std::setw(25) << d.getStatusString();
 		d.setCijena();
 		unos << std::setw(20) << d.getCijena();
-
-
 		unos << std::endl;
-
 	}
 	unos.close();
-
 	return stream;
 }
 void Destinacija::sortirajPoCijeni()
@@ -363,6 +359,7 @@ void Destinacija::sortirajPoCijeni()
 	std::ifstream dest("destinacije.txt");
 	std::string red;
 	int br = 0;
+	int br1 = 0;
 	if (dest.fail()) std::cout << "Nemoguce pristupiti!!";
 	else {
 		while (!dest.eof()) {
@@ -380,29 +377,42 @@ void Destinacija::sortirajPoCijeni()
 	for (int i = 0; i < br - 4; i++) { //unos iz datoteke u niz
 		dest >> nizDestinacija[i].id >> nizDestinacija[i].grad >> nizDestinacija[i].drzava >> nizDestinacija[i].hotel >> nizDestinacija[i].datumPolaska >>
 			nizDestinacija[i].datumPovratka >> nizDestinacija[i].brojOsoba >> nizDestinacija[i].vrsta >> nizDestinacija[i].cijena;
+		br1 += 1;
 	}
 	dest.close();
 	std::cout << "\n\t\t\t----------------------------------" << std::endl;
-	std::cout << std::setw(24) << " Sortirano po cijeni : " << std::endl;
+	std::cout << std::setw(50) << " Sortirano po cijeni : " << std::endl;
 	std::cout << "\t\t\t----------------------------------" << std::endl;
-	int br1 = 0;
-	for (int i = 0; i < br - 4; i++) {
-		for (int j = i; j < br - 4; j++) {
+	std::cout << "------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------" << std::endl;
+	std::cout << std::left << std::setw(6) << "ID:" << std::setw(20) << "Grad:" << std::setw(23) << "Drzava:" << std::setw(30) << "Hotel:" << std::setw(18) << "Datum polaska:" << std::setw(18) << "Datum povratka:" << std::setw(25) << "Slobodan broj mjesta:" << std::setw(25) << "Vrsta prijevoza:" << std::setw(20) << "Cijena(KM):" << std::endl;
+	std::cout << "------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------" << std::endl;
+	for (int i = 0; i < br1; i++) {
+		for (int j = i; j < br1; j++) {
 			if (nizDestinacija[i].cijena > nizDestinacija[j].cijena) {
+				std::swap(nizDestinacija[j].id, nizDestinacija[i].id);
+				std::swap(nizDestinacija[j].brojOsoba, nizDestinacija[i].brojOsoba);
+				std::swap(nizDestinacija[j].grad, nizDestinacija[i].grad);
+				std::swap(nizDestinacija[j].datumPolaska, nizDestinacija[i].datumPolaska);
+				std::swap(nizDestinacija[j].datumPovratka, nizDestinacija[i].datumPovratka);
+				std::swap(nizDestinacija[j].brojOsoba, nizDestinacija[i].brojOsoba);
+				std::swap(nizDestinacija[j].vrsta, nizDestinacija[i].vrsta);
+				std::swap(nizDestinacija[j].drzava, nizDestinacija[i].drzava);
+				std::swap(nizDestinacija[j].hotel, nizDestinacija[i].hotel);
 				std::swap(nizDestinacija[j].cijena, nizDestinacija[i].cijena);
-				std::swap(nizDestinacija[i].id, nizDestinacija[j].id);
-				std::swap(nizDestinacija[i].brojOsoba, nizDestinacija[j].brojOsoba);
-				std::swap(nizDestinacija[i].grad, nizDestinacija[j].grad);
-				std::swap(nizDestinacija[i].datumPolaska, nizDestinacija[j].datumPolaska);
-				std::swap(nizDestinacija[i].datumPovratka, nizDestinacija[j].datumPovratka);
-				std::swap(nizDestinacija[i].vrsta, nizDestinacija[j].vrsta);
-				std::swap(nizDestinacija[i].drzava, nizDestinacija[j].drzava);
-				std::swap(nizDestinacija[i].hotel, nizDestinacija[j].hotel);
 			}
 		}
 	}
 	for (int i = 0; i < br - 4; i++) {
-		std::cout << nizDestinacija[i].cijena << std::endl;
+		std::cout << std::left << std::setw(6) << nizDestinacija[i].id;
+		std::cout << std::setw(20) << nizDestinacija[i].grad;
+		std::cout << std::setw(23) << nizDestinacija[i].drzava;
+		std::cout << std::setw(30) << nizDestinacija[i].hotel;
+		std::cout << std::setw(18) << nizDestinacija[i].datumPolaska;
+		std::cout << std::setw(18) << nizDestinacija[i].datumPovratka;
+		std::cout << std::setw(25) << nizDestinacija[i].brojOsoba;
+		std::cout << std::setw(25) << nizDestinacija[i].vrsta;
+		std::cout << std::setw(20) << nizDestinacija[i].cijena;
+		std::cout << std::endl;
 	}
 	system("pause");
 }
