@@ -348,7 +348,7 @@ std::istream& operator>>(std::istream& stream, Destinacija& d)
 		d.setPrijevoz();
 		unos << std::setw(25) << d.getStatusString();
 		d.setCijena();
-		unos << std::setw(20) << d.getCijena();
+		unos << d.getCijena();
 		unos << std::endl;
 	}
 	unos.close();

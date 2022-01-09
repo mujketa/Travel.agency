@@ -1,17 +1,28 @@
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 ID:   Grad:               Drzava:                Hotel:                        Datum polaska:    Datum povratka:   Slobodan broj mjesta:    Vrsta prijevoza:         Cijena(KM):         
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-1     paris               france                 keptet                        01.06.2011.       01.06.2011.       118                      Avion                    550                                                   
-2     kairo               egipat                 sdgfdg                        2353245           3453453           51                       Avion                    546                                                                    
-3     washington          usa                    trump                         4364356           235346            59                       Avion                    1200                                
-4     sarajevo            bih                    swiss                         32564536          345534            0                        Autobus                  150                                  
-5     paris               france                 keptet                        01.06.2011.       01.06.2011.       120                      Avion                    550                 
-6     kairo               egipat                 sdgfdg                        2353245           3453453           54                       Avion                    546                 
-7     miami               usa                    trump                         4364356           235346            59                       Avion                    1200                                
-8     zenica              bih                    swiss                         32564536          345534            39                       Autobus                  150                                  
-9     madrid              spain                  nesto                         43564             3456436           41                       Avion                    600                                                                          
-10    mostar              bosnia                 dfhfg                         534654            45654             43                       Avion                    45                                                      
-11    beograd             srbija                 sdgfdg                        54654             65456             55                       Autobus                  546                                  
-12    zagreb              croatia                hdfdg                         43534             345345            0                        Avion                    56                
-13    hdjd                jdjdf                  hdkdk                         344               33                4                        Avion                    3333                                
-14    hjdj                jdkfk                  jsksksd                       fjfkf             hdkdf             55                       Avion                    44                  
+1     washington          usa                    trump                         4364356           235346            59                       Avion                    1200
+2     sarajevo            bih                    swiss                         32564536          345534            0                        Autobus                  150                 
+3     paris               france                 keptet                        01.06.2011.       01.06.2011.       114                      Avion                    550                                                                                                      
+4     miami               usa                    trump                         4364356           235346            59                       Avion                    1200
+5     zenica              bih                    swiss                         32564536          345534            39                       Autobus                  150
+6     madrid              spain                  nesto                         43564             3456436           37                       Avion                    600                                                                    
+7     mostar              bosnia                 dfhfg                         534654            45654             42                       Avion                    45
+8     beograd             srbija                 sdgfdg                        54654             65456             55                       Autobus                  546
+9     zagreb              croatia                hdfdg                         43534             345345            0                        Avion                    56                                    
+10    hdjd                jdjdf                  hdkdk                         344               33                4                        Avion                    3333
+11    zenica              bih                    bosna                         5.5.2021.         10.6.2022.        200                      Avion                    10000
+12    fgfd                dfgfd                  fgfgh                         465354            54645             546                      Avion                    34543
+
+
+
+
+
+
+
+
+
+
+
+
+

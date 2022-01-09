@@ -44,23 +44,18 @@ bool Admin::prijavaAdmina()
 
 void Admin::dodajAdmina()
 {
-    if (prijavaAdmina()) {
-        std::cout << "Mozete dodati novog admina!\n";
-        system("pause");
-        system("cls");
-        std::string reguser, regpass;
-        system("cls");
-        std::cout << "USERNAME: ";
-        std::cin >> reguser;
-        std::cout << "PASSWORD: ";
-        std::cin >> regpass;
 
-        std::ofstream reg("Admin.txt", std::ios::app);//unos novog adima u datoteku
-        reg << reguser << ' ' << regpass << std::endl;
-        std::system("cls");
-        std::cout << "\nRegistration Sucessful\n";
-    }
-    else {
-        std::cout << "Nemoguca prijava novog admina!\n";
-    }
+    std::string reguser, regpass;
+    system("cls");
+    std::cout << "Dodajte novog admina!\n";
+    std::cout << "USERNAME: ";
+    std::cin >> reguser;
+    std::cout << "PASSWORD: ";
+    std::cin >> regpass;
+
+    std::ofstream reg("Admin.txt", std::ios::app);//unos novog adima u datoteku
+    reg << reguser << ' ' << regpass << std::endl;
+    std::system("cls");
+    std::cout << "Uspjesno ste dodali novog admina\n";
+
 }

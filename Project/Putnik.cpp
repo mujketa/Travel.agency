@@ -88,7 +88,6 @@ void Putnik::setDestinacija()
 	std::cin >> id;
 	std::cin.ignore();
 	dest.smanjiSlobodnoMjesto(id);
-
 	std::string temp; //u temp smjestam ono sto treba ispisati u datoteci
 	std::ifstream destinacije("destinacije.txt", std::ios::in);
 	std::ofstream unos("putnik.txt", std::ios::app); 
@@ -110,6 +109,7 @@ void Putnik::setDestinacija()
 				destinacije >> temp; //smjestamo drzavu iz destinacije.txt u temp
 				unos << temp;      ////smjestamo drzavu u datoteku putnik.txt
 				unos << std::endl;
+				break;
 				
 			}
 			else //ako se ne ispuni uslov, jednostavno prepisujemo citavu liniju iz datoteke sa getline 
@@ -117,6 +117,7 @@ void Putnik::setDestinacija()
 				std::getline(destinacije, temp);
 			}
 		}
+
 	}
 	destinacije.close();
 	unos.close();

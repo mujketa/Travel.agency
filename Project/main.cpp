@@ -119,6 +119,8 @@ void korisnickiMenu() {
 			dest.pronadjiDestinaciju();
 			break;
 		case 3:
+			system("cls");
+			p.setPutnik();
 			p.setDestinacija();
 			break;
 		case 4:
