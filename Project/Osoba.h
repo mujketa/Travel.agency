@@ -14,6 +14,7 @@ public:
 	void setPrezime();
 	void setEmail();
 	void setBrojTelefona();
+	virtual void setOsoba();
 	char* getIme();
 	char* getPrezime();
 	char* getEmail();

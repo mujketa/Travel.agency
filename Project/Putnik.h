@@ -8,7 +8,7 @@ public:
     Putnik();
     Putnik(std::string brK);
     //Putnik(const Putnik& p);
-    void setPutnik();
+    void setOsoba() override;
     void setDestinacija();
     void setBrojKartice();
     std::string getBrojKartice();

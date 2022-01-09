@@ -15,12 +15,23 @@ int pocetniMenu()
 	std::cout << std::setw(10) << " " << "|*| \t2. Login as guest" << "               |*|" << std::endl;
 	std::cout << std::setw(10) << " " << "|*| \t3. Kraj" << "                         |*|" << "\n";
 	std::cout << std::setw(10) << " " << " ======================================\n";
-	do
-	{
-		std::cout << std::setw(17) << "Izbor: ";
-		std::cin >> izbor;
-		system("pause");
+	do {
+		try
+		{
+			std::cout << std::setw(17) << "Izbor: ";
+			std::cin >> izbor;
+
+			if (izbor < 1 || izbor>3) throw "[GRESKA]";
+		}
+		catch (const char* Greska) {
+			std::cout << Greska << std::endl;
+			std::cin.ignore();
+		}
+		catch (...) {
+			std::cout << std::setw(17) << "[GRESKA] Nepoznata greska!" << std::endl;
+		}
 	} while (izbor < 1 || izbor>3);
+	
 	std::cin.ignore();
 	return izbor;
 }

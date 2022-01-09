@@ -32,7 +32,7 @@ std::string Putnik::getBrojKartice()
 	return this->brojKartice;
 }
 
-void Putnik::setPutnik()
+void Putnik::setOsoba()
 {
 	std::ifstream some("putnik.txt");
 	std::string temp;
@@ -88,7 +88,7 @@ void Putnik::setDestinacija()
 	std::cin >> id;
 	std::cin.ignore();
 	if (dest.smanjiSlobodnoMjesto(id)) {
-		setPutnik();
+		setOsoba();
 		std::string temp; //u temp smjestam ono sto treba ispisati u datoteci
 		std::ifstream destinacije("destinacije.txt", std::ios::in);
 		std::ofstream unos("putnik.txt", std::ios::app);

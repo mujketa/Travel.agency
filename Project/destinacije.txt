@@ -5,11 +5,14 @@ ID:   Grad:               Drzava:                Hotel:                        D
 2     kairo               egipat                 sdgfdg                        2353245           3453453           51                       Avion                    546                                                                    
 3     washington          usa                    trump                         4364356           235346            59                       Avion                    1200                                
 4     sarajevo            bih                    swiss                         32564536          345534            0                        Autobus                  150                                  
-5     paris               france                 keptet                        01.06.2011.       01.06.2011.       120                      Avion                    550                 
+5     paris               france                 keptet                        01.06.2011.       01.06.2011.       118                      Avion                    550                                                   
 6     miami               usa                    trump                         4364356           235346            59                       Avion                    1200                
-7     zenica              bih                    swiss                         32564536          345534            39                       Autobus                  150                                  
+7     zenica              bih                    swiss                         32564536          345534            38                       Autobus                  150                                                   
 8     madrid              spain                  nesto                         43564             3456436           41                       Avion                    600                                                                          
 9    mostar              bosnia                 dfhfg                         534654            45654             43                       Avion                    45                                                      
 10    beograd             srbija                 sdgfdg                        54654             65456             55                       Autobus                  546                                  
 11    zagreb              croatia                hdfdg                         43534             345345            0                        Avion                    56                
 12    madrid              spanija                tugy                          21.2.2022.        28.2.2022.        63                       Autobus                  320                 
+
+
+

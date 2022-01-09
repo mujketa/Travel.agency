@@ -8,4 +8,5 @@ ID:   Ime:                Prezime:               Email:                        B
 5     sdfsd               sdfsd                  sdfsdsfd@.com                 345646                   1234567890123456         madrid, spain
 6     sdfsdfsd            sdfsdf                 34554334@.ba                  34534534                 1234567890123456         zagreb, croatia
 7     gfdg                gdfg                   dfgdf@.ba                     3453453                  1234567890123456         zagreb, croatia
-8     berina              jahic                  be@.com                       bdibkebfk                1234567890123456         fgfd, dfgfd
+8     berin               kuhic                  ner@.ba                       092345243                2837465129384765         paris, france
+9     nermin              alic                   mer@.com                      032938473                2938475629384756         zenica, bih
