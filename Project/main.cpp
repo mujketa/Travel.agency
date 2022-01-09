@@ -7,14 +7,14 @@
 int pocetniMenu()
 {
 	int izbor;
-	std::cout << std::setw(10) << " " << std::setw(1) << "======================================\n";
+	std::cout << std::setw(10) << " "  << " ======================================\n";
 	std::cout << std::setw(10) << " " << "|*|" << "       ~ Pocetni meni ~         " << "|*|" << std::endl;
-	std::cout << std::setw(10) << " " << std::setw(1) << "======================================\n";
-	std::cout << std::setw(10) << " " << "|*|" << std::setw(35) << "|*|" << std::endl;
-	std::cout << std::setw(10) << " " << "|*| \t1. Login admina" << std::setw(17) << "|*|" << std::endl;
-	std::cout << std::setw(10) << " " << "|*| \t2. Login as guest" << std::setw(15) << "|*|" << std::endl;
-	std::cout << std::setw(10) << " " << "|*| \t3. Kraj" << std::setw(25) << "|*|" << "\n";
-	std::cout << std::setw(10) << " " << std::setw(1) << "======================================\n";
+	std::cout << std::setw(10) << " " << " ======================================\n";
+	std::cout << std::setw(10) << " " << "|*|                                   "<< "|*|" << std::endl;
+	std::cout << std::setw(10) << " " << "|*| \t1. Login admina" <<"                 |*|" << std::endl;
+	std::cout << std::setw(10) << " " << "|*| \t2. Login as guest" << "               |*|" << std::endl;
+	std::cout << std::setw(10) << " " << "|*| \t3. Kraj" << "                         |*|" << "\n";
+	std::cout << std::setw(10) << " " << " ======================================\n";
 	do
 	{
 		std::cout << std::setw(17) << "Izbor: ";
@@ -27,17 +27,17 @@ int pocetniMenu()
 
 int izborZaAdminMenu() {
 	int izbor;
-	std::cout << std::setw(10) << " " << std::setw(1) << "======================================\n";
+	std::cout << std::setw(10) << " "  << "======================================\n";
 	std::cout << std::setw(10) << " " << "|*|" << "            ~ MENI ~            " << "|*|" << std::endl;
-	std::cout << std::setw(10) << " " << std::setw(1) << "======================================\n";
-	std::cout << std::setw(10) << " " << "|*|" << std::setw(35) << "|*|" << std::endl;
-	std::cout << std::setw(10) << " " << "|*| \t1. Dodaj destinaciju" << std::setw(12) << "|*|" << std::endl;
-	std::cout << std::setw(10) << " " << "|*| \t2. Ukloni destinaciju" << std::setw(11) << "|*|" << std::endl;
-	std::cout << std::setw(10) << " " << "|*| \t3. Pogledaj destinacije" << std::setw(9) << "|*|" << std::endl;
-	std::cout << std::setw(10) << " " << "|*| \t4. Dodaj admina" << std::setw(17) << "|*|" << std::endl;
-	std::cout << std::setw(10) << " " << "|*| \t5. Kraj programa" << std::setw(16) << "|*|" << std::endl;
-	std::cout << std::setw(10) << " " << "|*|" << std::setw(35) << "|*|" << std::endl;
-	std::cout << std::setw(10) << " " << std::setw(1) << "======================================\n";
+	std::cout << std::setw(10) << " " <<" ======================================\n";
+	std::cout << std::setw(10) << " " << "|*|" << "                                   |*|" << std::endl;
+	std::cout << std::setw(10) << " " << "|*| \t1. Dodaj destinaciju" << "            |*|" << std::endl;
+	std::cout << std::setw(10) << " " << "|*| \t2. Ukloni destinaciju" <<  "           |*|" << std::endl;
+	std::cout << std::setw(10) << " " << "|*| \t3. Pogledaj destinacije" << "         |*|" << std::endl;
+	std::cout << std::setw(10) << " " << "|*| \t4. Dodaj admina"  << "                 |*|" << std::endl;
+	std::cout << std::setw(10) << " " << "|*| \t5. Kraj programa" << "                |*|" << std::endl;
+	std::cout << std::setw(10) << " " << "|*|" << "                                   |*|" << std::endl;
+	std::cout << std::setw(10) << " "  << " ======================================\n";
 	do
 	{
 		std::cout << std::setw(17) << " Izbor: ";
@@ -120,7 +120,6 @@ void korisnickiMenu() {
 			break;
 		case 3:
 			system("cls");
-			p.setPutnik();
 			p.setDestinacija();
 			break;
 		case 4:
@@ -163,21 +162,5 @@ int main()
 		system("pause");
 		system("cls");
 	} while (izbor != 3);
-	//adminMenu();
-	//Destinacija dest;
-	//system("cls");
-	//int id;
-	//dest.pronadjiDestinaciju();
-	//Admin a;
-	//a.prijavaAdmina();
-	//a.dodajAdmina();
-	//std::cin >> dest;
-	//std::cout << dest;
-	//dest.izbrisiDestinaciju()
-	//dest.smanjiSlobodnoMjesto(id);
-	//Putnik p;
-	//p.setPutnik();
-	//p.setDestinacija();
-	//std::cout << dest;
 	return 0;
 }

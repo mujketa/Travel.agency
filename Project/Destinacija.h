@@ -38,7 +38,7 @@ public:
 	void pronadjiDestinaciju();
 	void sortirajPoCijeni();
 	void sortirajPoCijeniMinMax();
-	void smanjiSlobodnoMjesto(int id);
+	bool smanjiSlobodnoMjesto(int id);
 	friend std::istream& operator>>(std::istream& stream, Destinacija& d);
 	friend std::ostream& operator<<(std::ostream& stream, Destinacija& d);
 	std::string getStatusString();

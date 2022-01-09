@@ -239,7 +239,7 @@ void Destinacija::pronadjiDestinaciju()
 	}
 }
 
-void Destinacija::smanjiSlobodnoMjesto(int id)
+bool Destinacija::smanjiSlobodnoMjesto(int id)
 {
 	std::string temp, grad, hotel, polazak, povratak, prijevoz;
 	int i = 1, brojOsoba, id1;
@@ -294,9 +294,10 @@ void Destinacija::smanjiSlobodnoMjesto(int id)
 	}
 	else if (!moze) {
 		std::cout << "Sva slobodna mjesta za zeljenu destinaciju su popunjena!!!\n";
+		return false;
 	}
+	return true;
 }
-
 
 /*-------------------OPERATOR ZA UNOS DESTINACIJE U SKLOPU ADMIN MENUA-----------------*/
 std::istream& operator>>(std::istream& stream, Destinacija& d)
@@ -354,6 +355,7 @@ std::istream& operator>>(std::istream& stream, Destinacija& d)
 	unos.close();
 	return stream;
 }
+
 void Destinacija::sortirajPoCijeni()
 {
 	std::ifstream dest("destinacije.txt");
