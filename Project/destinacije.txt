@@ -1,18 +1,11 @@
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 ID:   Grad:               Drzava:                Hotel:                        Datum polaska:    Datum povratka:   Slobodan broj mjesta:    Vrsta prijevoza:         Cijena(KM):         
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-1     paris               france                 keptet                        01.06.2011.       01.06.2011.       118                      Avion                    550                                                   
-2     kairo               egipat                 sdgfdg                        2353245           3453453           51                       Avion                    546                                                                    
-3     washington          usa                    trump                         4364356           235346            59                       Avion                    1200                                
-4     sarajevo            bih                    swiss                         32564536          345534            0                        Autobus                  150                                  
-5     paris               france                 keptet                        01.06.2011.       01.06.2011.       118                      Avion                    550                                                   
-6     miami               usa                    trump                         4364356           235346            59                       Avion                    1200                
-7     zenica              bih                    swiss                         32564536          345534            38                       Autobus                  150                                                   
-8     madrid              spain                  nesto                         43564             3456436           41                       Avion                    600                                                                          
-9    mostar              bosnia                 dfhfg                         534654            45654             43                       Avion                    45                                                      
-10    beograd             srbija                 sdgfdg                        54654             65456             55                       Autobus                  546                                  
-11    zagreb              croatia                hdfdg                         43534             345345            0                        Avion                    56                
-12    madrid              spanija                tugy                          21.2.2022.        28.2.2022.        63                       Autobus                  320                 
-
-
-
+1     beograd             srbija                 sdgfdg                        54654             65456             54                       Autobus                  546                 
+2     zagreb              croatia                hdfdg                         43534             345345            0                        Avion                    56
+3     istanbul            turska                 royal                         15.5.2001.        20.5.2002.        100                      Avion                    100                 
+4     sarajevo            bih                    neki                          4355              34543             544                      Avion                    1000
+5     zenica              neka                   tamo                          234               53                3465                     Avion                    4556
+6     dfg                 dh                     dh                            dfh               dfgnh             0                        Autobus                  0
+7     zenica              ljkn                   kjn                           345               34                324                      Avion                    24234
+8     neki                tamo                   grad                          24                234               234                      Avion                    12432

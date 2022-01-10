@@ -1,7 +1,7 @@
 #include "Admin.h"
 #include <fstream>
 #include <iostream>
-
+#include "Windows.h"
 
 
 Admin::Admin()
@@ -13,9 +13,9 @@ bool Admin::prijavaAdmina()
     int br=0;
     std::string user,sifra, u, p;
     system("cls");
-    std::cout << "USERNAME: ";
+    std::cout << "\n\tUSERNAME: ";
     std::cin >> user;
-    std::cout << "PASSWORD: ";
+    std::cout << "\tPASSWORD: ";
     std::cin >> sifra;
 
     std::ifstream admin("Admin.txt");
@@ -30,14 +30,15 @@ bool Admin::prijavaAdmina()
     admin.close();
     if (br == 1) // ako postoji
     {
-        std::cout << "\nZdravo, " << user << ", prijava je uspjesno izvrsena!\ \n";
-        system("pause");
+        std::cout << "\n\tZdravo, " << user << ", prijava je uspjesno izvrsena!\ \n";
+        Sleep(2000);
+        system("cls");
         return true;
     }
     else // ako ne postoji
     {
-        std::cout << "\nLOGIN ERROR\nMolimo provjerit vas username i sifru!\n";
-        system("pause");
+        std::cout << "\n\t[LOGIN ERROR] Molimo provjerite vas username i sifru!\n";
+        Sleep(2000);
         return false;
     }
 }
@@ -47,15 +48,16 @@ void Admin::dodajAdmina()
 
     std::string reguser, regpass;
     system("cls");
-    std::cout << "Dodajte novog admina!\n";
-    std::cout << "USERNAME: ";
+    std::cout << "\tDodajte novog admina!\n";
+    std::cout << "\n\tUSERNAME: ";
     std::cin >> reguser;
-    std::cout << "PASSWORD: ";
+    std::cout << "\tPASSWORD: ";
     std::cin >> regpass;
 
     std::ofstream reg("Admin.txt", std::ios::app);//unos novog adima u datoteku
     reg << reguser << ' ' << regpass << std::endl;
     std::system("cls");
-    std::cout << "Uspjesno ste dodali novog admina\n";
+    std::cout << "\tUspjesno ste dodali novog admina\n";
+    Sleep(2000);
 
 }

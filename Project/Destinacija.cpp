@@ -21,37 +21,37 @@ Destinacija::Destinacija()
 
 void Destinacija::setGrad()
 {
-	std::cout << "Unesite naziv grada: ";
+	std::cout << "\tUnesite naziv grada: ";
 	std::cin.getline(this->grad, 30);
 }
 
 void Destinacija::setDrzava()
 {
-	std::cout << "Unesite naziv drzave: ";
+	std::cout << "\tUnesite naziv drzave: ";
 	std::cin.getline(this->drzava, 30);
 }
 
 void Destinacija::setHotel()
 {
-	std::cout << "Unesite naziv hotela: ";
+	std::cout << "\tUnesite naziv hotela: ";
 	std::cin.getline(this->hotel, 30);
 }
 
 void Destinacija::setDatumPolaska()
 {
-	std::cout << "Unesite datum polaska: ";
+	std::cout << "\tUnesite datum polaska: ";
 	std::cin.getline(this->datumPolaska, 20);
 }
 
 void Destinacija::setDatumPovratka()
 {
-	std::cout << "Unesite datum povratka: ";
+	std::cout << "\tUnesite datum povratka: ";
 	std::cin.getline(this->datumPovratka, 20);
 }
 
 void Destinacija::setCijena()
 {
-	std::cout << "Unesite cijenu (KM): ";
+	std::cout << "\tUnesite cijenu (KM): ";
 	std::cin >> this->cijena;
 	std::cin.ignore();
 }
@@ -61,7 +61,7 @@ void Destinacija::setPrijevoz()
 	std::shared_ptr<int> x = std::make_shared<int>(); //pametni pokazivac
 	do
 	{
-		std::cout << "Odaberite vrstu prijevoza( 0-autobus, 1-avion ): ";
+		std::cout << "\tOdaberite vrstu prijevoza( 0-autobus, 1-avion ): ";
 		std::cin >> *x;
 	} while (*x < 0 || *x > 1);
 	std::cin.ignore();
@@ -71,7 +71,7 @@ void Destinacija::setPrijevoz()
 
 void Destinacija::setBrojOsoba()
 {
-	std::cout << "Unesite maksimalni broj osoba za putovanje: ";
+	std::cout << "\tUnesite maksimalni broj osoba za putovanje: ";
 	std::cin >> this->brojOsoba;
 	std::cin.ignore();
 
@@ -121,9 +121,9 @@ void Destinacija::izbrisiDestinaciju()
 	std::string temp, tempp; //u temmp smjestam ono sto treba ispisati u datoteci, a sa tempp preskaacem onaj red koji treba izbrisati
 	int br = 0, id, broj;
 	do {
-		std::cout << "Unesite ID destinacije koju zelite ukloniti:: ";
+		std::cout << "\nUnesite ID destinacije koju zelite ukloniti: ";
 		std::cin >> id;
-	} while (id < 0 || id>20);    //ne moze se unijeti prazan string
+	} while (id <= 0 || id>20);    //ne moze se unijeti prazan string
 	std::ifstream destinacije("destinacije.txt", std::ios::in);
 	std::ofstream pomocna("pomocna.txt"); //treba nam pomocna.txt jer u nju prepisujemo sve podatke iz destinacije.txt, ali bez one destinacije koju smo obrisali
 	if (destinacije.fail()) std::cout << "Nemoguce otvoriti datoteku!" << std::endl;
@@ -211,25 +211,25 @@ void Destinacija::pronadjiDestinaciju()
 	std::string proizv;   //
 	 //potrebni stringovi za poredjenje sa nizom
 	std::cout << "\n";
-	std::cout << std::setw(24) << " " << "Unesite destinaciju: ";
+	std::cout << "\tUnesite destinaciju: ";
 	std::cin >> proizv;
 	int br1 = 0;
 	for (int i = 0; i < br - 4; i++) {
 		if ((strcmp(proizv.c_str(), nizDestinacija[i].gradd.c_str()) == 0 && nizDestinacija[i].brojOsoba > 0) || (strcmp(proizv.c_str(), nizDestinacija[i].drzavaa.c_str()) == 0 && nizDestinacija[i].brojOsoba > 0)) { //provjerava je li mobitel dostupan u datoteci
 			br1++;
-			std::cout << "\n\t\t\t----------------------------------";
-			std::cout << "\n\t\t\t Trazena destinacija je dostupna." << std::endl;
-			std::cout << "\t\t\t----------------------------------" << std::endl;
-			std::cout << std::left << std::setw(25) << "\t\t\tID: " << nizDestinacija[i].id << std::endl;
-			std::cout << std::left << std::setw(25) << "\t\t\tGrad: " << nizDestinacija[i].gradd << std::endl;
-			std::cout << std::left << std::setw(25) << "\t\t\tDrzava: " << nizDestinacija[i].drzavaa << std::endl;
-			std::cout << std::left << std::setw(25) << "\t\t\tHotel: " << nizDestinacija[i].hotel << std::endl;
-			std::cout << std::left << std::setw(25) << "\t\t\tDatum polaska: " << nizDestinacija[i].datumPolaska << std::endl;
-			std::cout << std::left << std::setw(25) << "\t\t\tDatum povratka: " << nizDestinacija[i].datumPovratka << std::endl;
-			std::cout << std::left << std::setw(25) << "\t\t\tSlobodan broj mjesta: " << nizDestinacija[i].brojOsoba << std::endl;
-			std::cout << std::left << std::setw(25) << "\t\t\tVrsta prijevoza: " << nizDestinacija[i].vrsta << std::endl;
-			std::cout << std::left << std::setw(25) << "\t\t\tCijena: " << nizDestinacija[i].cijena << std::endl;
-			std::cout << "\t\t\t----------------------------------" << std::endl;
+			std::cout << "\n\t----------------------------------";
+			std::cout << "\n\t Trazena destinacija je dostupna." << std::endl;
+			std::cout << "\t----------------------------------" << std::endl;
+			std::cout << std::left << std::setw(25) << "\tID: " << nizDestinacija[i].id << std::endl;
+			std::cout << std::left << std::setw(25) << "\tGrad: " << nizDestinacija[i].gradd << std::endl;
+			std::cout << std::left << std::setw(25) << "\tDrzava: " << nizDestinacija[i].drzavaa << std::endl;
+			std::cout << std::left << std::setw(25) << "\tHotel: " << nizDestinacija[i].hotel << std::endl;
+			std::cout << std::left << std::setw(25) << "\tDatum polaska: " << nizDestinacija[i].datumPolaska << std::endl;
+			std::cout << std::left << std::setw(25) << "\tDatum povratka: " << nizDestinacija[i].datumPovratka << std::endl;
+			std::cout << std::left << std::setw(25) << "\tSlobodan broj mjesta: " << nizDestinacija[i].brojOsoba << std::endl;
+			std::cout << std::left << std::setw(25) << "\tVrsta prijevoza: " << nizDestinacija[i].vrsta << std::endl;
+			std::cout << std::left << std::setw(25) << "\tCijena: " << nizDestinacija[i].cijena << std::endl;
+			std::cout << "\t----------------------------------\n" << std::endl;
 		}
 	}
 	if (br1 == 0) { //ako se nisu zadovoljili uslovi znaci da tog mobitela nema u datoteci
@@ -290,7 +290,7 @@ bool Destinacija::smanjiSlobodnoMjesto(int id)
 		std::cout << "ID koji ste unijeli je izvan ranga ponudenih ID!!!\n";
 	}
 	else if (i > 1 && moze) {
-		std::cout << "Rezervacija je uspjesna! \n";
+		std::cout << "Rezervacija ce biti uspjesna nakon sto unesete svoje podatke! \n";
 	}
 	else if (!moze) {
 		std::cout << "Sva slobodna mjesta za zeljenu destinaciju su popunjena!!!\n";
@@ -383,7 +383,7 @@ void Destinacija::sortirajPoCijeni()
 	}
 	dest.close();
 	std::cout << "\n\t\t\t----------------------------------" << std::endl;
-	std::cout << std::setw(50) << " Sortirano po cijeni : " << std::endl;
+	std::cout << "                              Sortirano po cijeni : " << std::endl;
 	std::cout << "\t\t\t----------------------------------" << std::endl;
 	std::cout << "------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------" << std::endl;
 	std::cout << std::left << std::setw(6) << "ID:" << std::setw(20) << "Grad:" << std::setw(23) << "Drzava:" << std::setw(30) << "Hotel:" << std::setw(18) << "Datum polaska:" << std::setw(18) << "Datum povratka:" << std::setw(25) << "Slobodan broj mjesta:" << std::setw(25) << "Vrsta prijevoza:" << std::setw(20) << "Cijena(KM):" << std::endl;
@@ -416,7 +416,6 @@ void Destinacija::sortirajPoCijeni()
 		std::cout << std::setw(20) << nizDestinacija[i].cijena;
 		std::cout << std::endl;
 	}
-	system("pause");
 }
 
 void Destinacija::sortirajPoCijeniMinMax()
@@ -446,12 +445,12 @@ void Destinacija::sortirajPoCijeniMinMax()
 		br1 += 1;
 	}
 	dest.close();
-	std::cout << "Unesite min cijenu: ";
+	std::cout << "Unesite minimalnu cijenu: ";
 	std::cin >> min;
-	std::cout << "Unesite max cijenu: ";
+	std::cout << "Unesite maximalnu cijenu: ";
 	std::cin >> max;
 	std::cout << "\n\t\t\t----------------------------------" << std::endl;
-	std::cout << std::setw(50) << " Sortirano po cijeni : " << std::endl;
+	std::cout << "                              Sortirano po cijeni : " << std::endl;
 	std::cout << "\t\t\t----------------------------------" << std::endl;
 	std::cout << "------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------" << std::endl;
 	std::cout << std::left << std::setw(6) << "ID:" << std::setw(20) << "Grad:" << std::setw(23) << "Drzava:" << std::setw(30) << "Hotel:" << std::setw(18) << "Datum polaska:" << std::setw(18) << "Datum povratka:" << std::setw(25) << "Slobodan broj mjesta:" << std::setw(25) << "Vrsta prijevoza:" << std::setw(20) << "Cijena(KM):" << std::endl;
@@ -486,7 +485,6 @@ void Destinacija::sortirajPoCijeniMinMax()
 			std::cout << std::endl;
 		}
 	}
-	system("pause");
 }
 
 /*ISPIS DESTINACIJA*/

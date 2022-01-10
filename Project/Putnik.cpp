@@ -84,11 +84,13 @@ void Putnik::setDestinacija()
 	Destinacija dest;
 	int id, broj;
 	std::cout << dest;
-	std::cout << "Unesite ID destinacije koju zelite rezervirati: ";
+	std::cout << "\nUnesite ID destinacije koju zelite rezervirati: ";
 	std::cin >> id;
 	std::cin.ignore();
 	if (dest.smanjiSlobodnoMjesto(id)) {
+		std::cout << "\n";
 		setOsoba();
+		std::cout << "\nUspjesno ste izvrsili rezervaciju. HVALA NA POVJERENJU!\n";
 		std::string temp; //u temp smjestam ono sto treba ispisati u datoteci
 		std::ifstream destinacije("destinacije.txt", std::ios::in);
 		std::ofstream unos("putnik.txt", std::ios::app);
