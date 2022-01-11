@@ -2,6 +2,7 @@
 #include <fstream>
 #include <iostream>
 #include "Windows.h"
+#include <conio.h>
 
 
 Admin::Admin()
@@ -10,13 +11,19 @@ Admin::Admin()
 
 bool Admin::prijavaAdmina()
 {
-    int br=0;
-    std::string user,sifra, u, p;
+    char ch;
+    int br = 0;
+    std::string user, u, p, sifra = "";
     system("cls");
-    std::cout << "\n\tUSERNAME: ";
+    std::cout << "USERNAME: ";
     std::cin >> user;
-    std::cout << "\tPASSWORD: ";
-    std::cin >> sifra;
+    std::cout << "PASSWORD: ";
+    ch = _getch();
+    while (ch != 13) {//character 13 is enter
+        sifra.push_back(ch);
+        std::cout << '*';
+        ch = _getch();
+    }
 
     std::ifstream admin("Admin.txt");
     while (admin >> u >> p)// povlaci informacije iz datoteke
@@ -30,15 +37,14 @@ bool Admin::prijavaAdmina()
     admin.close();
     if (br == 1) // ako postoji
     {
-        std::cout << "\n\tZdravo, " << user << ", prijava je uspjesno izvrsena!\ \n";
-        Sleep(2000);
-        system("cls");
+        std::cout << "\nZdravo, " << user << ", prijava je uspjesno izvrsena!\ \n";
+        system("pause");
         return true;
     }
     else // ako ne postoji
     {
-        std::cout << "\n\t[LOGIN ERROR] Molimo provjerite vas username i sifru!\n";
-        Sleep(2000);
+        std::cout << "\nLOGIN ERROR\nMolimo provjerit vas username i sifru!\n";
+        system("pause");
         return false;
     }
 }

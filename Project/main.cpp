@@ -166,16 +166,19 @@ void korisnickiMenu() {
 
 int main()
 {
-	std::cout << std::setw(10) << " " << "__  _" << std::endl;
-	std::cout << std::setw(10) << " " << "\\ `/ |" << std::endl;
-	std::cout << std::setw(10) << " " << " \\__`!" << std::endl;
-	std::cout << std::setw(10) << " " << " / , ' `-.___________________" << std::endl;
-	std::cout << std::setw(10) << " " << "'-'\\_____                `---`-." << std::endl;
-	std::cout << std::setw(10) << " " << "   <____()  O  O  O  O  O        )" << std::endl;
-	std::cout << std::setw(10) << " " << "    `.___, ------,_________...-'" << std::endl;
-	std::cout << std::setw(10) << " " << "          /   .'" << std::endl;
-	std::cout << std::setw(10) << " " << "         /  .'  ~Tabak group~" << std::endl;
-	std::cout << std::setw(10) << " " << "        /_.'" << std::endl;
+	system("Color F0");
+
+
+	std::cout << std::setw(20) << " " << "__  _" << std::endl;
+	std::cout << std::setw(20) << " " << "\\ `/ |" << std::endl;
+	std::cout << std::setw(20) << " " << " \\__`!" << std::endl;
+	std::cout << std::setw(20) << " " << " / , ' `-.___________________" << std::endl;
+	std::cout << std::setw(20) << " " << "'-'\\_____                `---`-." << std::endl;
+	std::cout << std::setw(20) << " " << "   <____()  O  O  O  O  O        )" << std::endl;
+	std::cout << std::setw(20) << " " << "    `.___, ------,_________...-'" << std::endl;
+	std::cout << std::setw(20) << " " << "          /   .'" << std::endl;
+	std::cout << std::setw(20) << " " << "         /  .'  ~Tabak group~" << std::endl;
+	std::cout << std::setw(20) << " " << "        /_.'" << std::endl;
 	std::cout << std::endl;
 
 	int izbor;

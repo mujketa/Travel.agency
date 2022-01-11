@@ -1,11 +1,39 @@
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 ID:   Grad:               Drzava:                Hotel:                        Datum polaska:    Datum povratka:   Slobodan broj mjesta:    Vrsta prijevoza:         Cijena(KM):         
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-1     beograd             srbija                 sdgfdg                        54654             65456             54                       Autobus                  546                 
-2     zagreb              croatia                hdfdg                         43534             345345            0                        Avion                    56
-3     istanbul            turska                 royal                         15.5.2001.        20.5.2002.        100                      Avion                    100                 
-4     sarajevo            bih                    neki                          4355              34543             544                      Avion                    1000
-5     zenica              neka                   tamo                          234               53                3465                     Avion                    4556
-6     dfg                 dh                     dh                            dfh               dfgnh             0                        Autobus                  0
-7     zenica              ljkn                   kjn                           345               34                324                      Avion                    24234
-8     neki                tamo                   grad                          24                234               234                      Avion                    12432
+1     Istanbul            Turska                 Seven_Hills_Palace            24.1.2022.        31.1.2022.        32                       Avion                    480
+2     London              Engleska               The_Waldorf_Hilton            1.2.2022.         5.2.2022.         45                       Avion                    720
+3     Zagreb              Hrvatska               Secret_Garden                 27.1.2022.        31.1.2022.        68                       Autobus                  220
+4     Madrid              Spanija                Catalonia_Goya                2.2.2022.         10.2.2022.        60                       Autobus                  600
+5     Beograd             Srbija                 Belgrade_City                 6.2.2022.         11.2.2022.        45                       Autobus                  280
+6     Istanbul            Turska                 Hagia_Sophia                  13.2.2022.        20.2.2022.        63                       Autobus                  250
+7     Moskva              Rusija                 KOSMOS                        15.4.2022.        25.4.2022.        40                       Avion                    800
+8     Wolverhampton       Engleska               Barons_Court                  28.3.2022.        3.4.2022.         33                       Avion                    760
+9     Amsterdam           Holandija              Notting_Hill                  23.2.2022.        1.3.2022.         55                       Autobus                  560
+10    Lisabon             Portugal               Lisboa                        11.2.2022.        13.2.2022.        44                       Avion                    320
+11    Tokyo               Japan                  Tokyo_Prince                  27.3.2022.        4.4.2022.         56                       Avion                    1000
+12    NY                  SAD                    Broadway_Plaza                8.6.2022.         15.6.2022.        30                       Avion                    2400
+13    Mostar              BiH                    Student                       15.4.2022.        20.4.2022.        28                       Autobus                  180
+14    Ulcinj              Crna_Gora              Villa_Marinero                26.6.2022.        2.7.2022.         20                       Autobus                  270
+15    Dubai               UAE                    Marcopolo                     24.5.2022.        31.5.2022.        16                       Avion                    1600
+16    Sarajevo            BiH                    Hills                         28.1.2022.        30.1.2022.        18                       Autobus                  60
+17    Berlin              Njemacka               Generator                     1.3.2022.         9.3.2022.         36                       Autobus                  300
+18    Rim                 Italija                Tito                          12.2.2022.        16.2.2022.        16                       Autobus                  385
+19    Bec                 Austrija               B&B                           28.2.2022.        5.3.2022.         21                       Avion                    425
+20    Vlasic              BiH                    Blanca                        21.1.2022.        23.1.2022.        30                       Autobus                  45
+21    Hamburg             Njemacka               Generator                     16.4.2022.        23.4.2022.        23                       Autobus                  585
+22    Birmingham          Engleska               Travelodge                    10.5.2022.        24.5.2022.        25                       Avion                    1275
+23    Minhen              Njemacka               Creatif                       6.6.2022.         17.6.2022.        33                       Autobus                  675
+24    Prag                Ceska                  Metropolitan                  1.7.2022.         8.7.2022.         19                       Avion                    405
+25    Milano              Italija                Idea                          14.8.2022.        18.8.2022.        67                       Autobus                  335
+26    Sofija              Bugarska               Aris                          12.7.2022.        20.7.2022.        44                       Avion                    390
+27    Firenca             Italija                Joy                           23.9.2022.        27.9.2022.        50                       Avion                    225
+28    Alanya              Turska                 Ergun                         31.7.2022.        4.8.2022.         32                       Avion                    315
+29    Ljubljana           Slovenija              InterContinental              12.10.2022.       16.10.2022.       65                       Avion                    465
+30    Brisel              Belgija                Safestay                      14.11.2022.       17.11.2022.       49                       Avion                    290
+31    Atina               Grcka                  Acropolis                     16.9.2022.        22.9.2022.        25                       Avion                    480
+32    Cirih               Svicarska              UTO-KULM                      10.6.2022.        14.6.2022.        27                       Avion                    400
+33    Oslo                Norveska               Citybox                       14.5.2022.        19.5.2022.        9                        Avion                    420
+34    Stokholm            Svedska                Freys                         2.10.2022.        7.10.2022.        12                       Avion                    345
+35    Budimpesta          Madjarska              OnRiver                       13.9.2022.        16.9.2022.        23                       Avion                    180
+
