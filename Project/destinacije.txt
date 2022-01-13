@@ -6,7 +6,7 @@ ID:   Grad:               Drzava:                Hotel:                        D
 3     Zagreb              Hrvatska               Secret_Garden                 27.1.2022.        31.1.2022.        68                       Autobus                  220
 4     Madrid              Spanija                Catalonia_Goya                2.2.2022.         10.2.2022.        60                       Autobus                  600
 5     Beograd             Srbija                 Belgrade_City                 6.2.2022.         11.2.2022.        45                       Autobus                  280
-6     Istanbul            Turska                 Hagia_Sophia                  13.2.2022.        20.2.2022.        63                       Autobus                  250
+6     Istanbul            Turska                 Hagia_Sophia                  13.2.2022.        20.2.2022.        64                       Autobus                  250
 7     Moskva              Rusija                 KOSMOS                        15.4.2022.        25.4.2022.        40                       Avion                    800
 8     Wolverhampton       Engleska               Barons_Court                  28.3.2022.        3.4.2022.         33                       Avion                    760
 9     Amsterdam           Holandija              Notting_Hill                  23.2.2022.        1.3.2022.         55                       Autobus                  560
@@ -36,4 +36,4 @@ ID:   Grad:               Drzava:                Hotel:                        D
 33    Oslo                Norveska               Citybox                       14.5.2022.        19.5.2022.        9                        Avion                    420
 34    Stokholm            Svedska                Freys                         2.10.2022.        7.10.2022.        12                       Avion                    345
 35    Budimpesta          Madjarska              OnRiver                       13.9.2022.        16.9.2022.        23                       Avion                    180
-
+36    Kakanj              BiH                    Bayraktar                     13.1.2022.        14.1.2022.        20                       Autobus                  20

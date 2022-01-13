@@ -2,6 +2,8 @@
 #include <fstream>
 #include <iostream>
 #include <iomanip>
+#include <Windows.h>
+
 #include "Destinacija.h"
 
 Putnik::Putnik()
@@ -22,7 +24,7 @@ void Putnik::setBrojKartice()
 {
 	do
 	{
-		std::cout << "Unesite vas broj racuna: ";
+		std::cout << "\tUnesite vas broj racuna: ";
 		std::getline(std::cin, this->brojKartice);
 	} while (this->brojKartice.length() != 16);
 }
@@ -84,12 +86,16 @@ void Putnik::setDestinacija()
 	Destinacija dest;
 	int id, broj;
 	std::cout << dest;
-	std::cout << "\nUnesite ID destinacije koju zelite rezervirati: ";
+	std::cout << "\n\tUnesite ID destinacije koju zelite rezervisati: ";
 	std::cin >> id;
 	std::cin.ignore();
 	if (dest.smanjiSlobodnoMjesto(id)) {
 		setOsoba();
-		std::cout << "\nUspjesno ste izvrsili rezervaciju. HVALA NA POVJERENJU!\n";
+		system("cls");
+		std::cout << "\n\n\tLoading...\n";
+		Sleep(2000);
+		std::cout << "\n\tUspjesno ste izvrsili rezervaciju. HVALA NA POVJERENJU :)\n\n";
+		system("pause");
 		std::string temp; //u temp smjestam ono sto treba ispisati u datoteci
 		std::ifstream destinacije("destinacije.txt", std::ios::in);
 		std::ofstream unos("putnik.txt", std::ios::app);

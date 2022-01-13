@@ -60,13 +60,13 @@ bool Osoba::ispravanEmail(char* adresa)
 
 void Osoba::setIme()
 {
-	std::cout << "Unesite vase ime: ";
+	std::cout << "\tUnesite vase ime: ";
 	std::cin.getline(this->ime, 30);
 }
 
 void Osoba::setPrezime()
 {
-	std::cout << "Unesite vase prezime: ";
+	std::cout << "\tUnesite vase prezime: ";
 	std::cin.getline(this->prezime, 30);
 }
 
@@ -74,10 +74,10 @@ void Osoba::setEmail()
 {
 	do
 	{
-		std::cout << "Unesite vasu email adresu: ";
+		std::cout << "\tUnesite vasu email adresu: ";
 		std::cin.getline(email, 30);
 		if (!ispravanEmail(email)) {
-			std::cout << "Neispravna adresa!\n";
+			std::cout << "\tNeispravna adresa!\n";
 		}
 	} while (!ispravanEmail(email));
 }
@@ -85,7 +85,7 @@ void Osoba::setEmail()
 
 void Osoba::setBrojTelefona()
 {
-	std::cout << "Unesite vas broj telefona: ";
+	std::cout << "\tUnesite vas broj telefona: ";
 	std::getline(std::cin, this->brojTelefona);
 }
 
