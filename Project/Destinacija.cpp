@@ -116,6 +116,9 @@ int Destinacija::getBrojOsoba()
 {
 	return this->brojOsoba;
 }
+
+
+/*METODA KOJA BRISE ODREDJENU DATOTEKU IZ DESTINACIJE.TXT*/
 void Destinacija::izbrisiDestinaciju()
 {
 	std::string temp, tempp; //u temmp smjestam ono sto treba ispisati u datoteci, a sa tempp preskaacem onaj red koji treba izbrisati
@@ -123,7 +126,7 @@ void Destinacija::izbrisiDestinaciju()
 	do {
 		std::cout << "\nUnesite ID destinacije koju zelite ukloniti: ";
 		std::cin >> id;
-	} while (id <= 0 || id>2000);    //ne moze se unijeti prazan string
+	} while (id <= 0 || id > 2000);    //ne moze se unijeti prazan string
 	std::ifstream destinacije("destinacije.txt", std::ios::in);
 	std::ofstream pomocna("pomocna.txt"); //treba nam pomocna.txt jer u nju prepisujemo sve podatke iz destinacije.txt, ali bez one destinacije koju smo obrisali
 	if (destinacije.fail()) std::cout << "Nemoguce otvoriti datoteku!" << std::endl;
@@ -166,21 +169,24 @@ void Destinacija::izbrisiDestinaciju()
 			else //ako se ne ispuni uslov, jednostavno prepisujemo citavu liniju iz datoteke sa getline 
 			{
 				br++;
-				pomocna << br; //na pocetak u id stavljamo vrijednost iz brojaca
+				if(br==9)
+				{
+					pomocna << std::setw(2) << br;
+				}else pomocna << br; //na pocetak u id stavljamo vrijednost iz brojaca
 				getline(destinacije, temp);
 				pomocna << temp << std::endl;
+
 			}
 
-
 		}
-
+		destinacije.close();
+		pomocna.close();
+		remove("destinacije.txt");                 //brise destinacije.txt
+		rename("pomocna.txt", "destinacije.txt");  //mijenja naziv pomocna.txt u destinacije.txt
 	}
-	destinacije.close();
-	pomocna.close();
-	remove("destinacije.txt");                 //brise destinacije.txt
-	rename("pomocna.txt", "destinacije.txt");  //mijenja naziv pomocna.txt u destinacije.txt
 }
 
+/*METODA ZA PRONALAZAK ODREDJENE DESTINACIJE (GRAD ILI DRZAVA)*/
 void Destinacija::pronadjiDestinaciju()
 {
 	std::ifstream unosD("destinacije.txt");
@@ -239,6 +245,7 @@ void Destinacija::pronadjiDestinaciju()
 	}
 }
 
+/*METODA KOJA SMANJUJE SLOBODNO MJESTO U DESTINACIJAMA NAKON STO PUTNIK REZERVISE TU DESTINACIJU*/
 bool Destinacija::smanjiSlobodnoMjesto(int id)
 {
 	std::string temp, grad, hotel, polazak, povratak, prijevoz;
@@ -356,6 +363,7 @@ std::istream& operator>>(std::istream& stream, Destinacija& d)
 	return stream;
 }
 
+/*METODA KOJA UZIMA SVE DESTINACIJE IZ KLASE I SORTIRA PO CIJENI OD MIN DO MAX*/
 void Destinacija::sortirajPoCijeni()
 {
 	std::ifstream dest("destinacije.txt");
@@ -392,16 +400,7 @@ void Destinacija::sortirajPoCijeni()
 	for (int i = 0; i < br1; i++) {
 		for (int j = i; j < br1; j++) {
 			if (nizDestinacija[i].cijena > nizDestinacija[j].cijena) {
-				std::swap(nizDestinacija[j].id, nizDestinacija[i].id);
-				std::swap(nizDestinacija[j].brojOsoba, nizDestinacija[i].brojOsoba);
-				std::swap(nizDestinacija[j].grad, nizDestinacija[i].grad);
-				std::swap(nizDestinacija[j].datumPolaska, nizDestinacija[i].datumPolaska);
-				std::swap(nizDestinacija[j].datumPovratka, nizDestinacija[i].datumPovratka);
-				std::swap(nizDestinacija[j].brojOsoba, nizDestinacija[i].brojOsoba);
-				std::swap(nizDestinacija[j].vrsta, nizDestinacija[i].vrsta);
-				std::swap(nizDestinacija[j].drzava, nizDestinacija[i].drzava);
-				std::swap(nizDestinacija[j].hotel, nizDestinacija[i].hotel);
-				std::swap(nizDestinacija[j].cijena, nizDestinacija[i].cijena);
+				std::swap(nizDestinacija[j], nizDestinacija[i]);
 			}
 		}
 	}
@@ -419,6 +418,7 @@ void Destinacija::sortirajPoCijeni()
 	}
 }
 
+/*ISPIS DESTINACIJA*/
 void Destinacija::sortirajPoCijeniMinMax()
 {
 	std::ifstream dest("destinacije.txt");
@@ -464,16 +464,7 @@ void Destinacija::sortirajPoCijeniMinMax()
 	for (int i = 0; i < br1; i++) {
 		for (int j = i; j < br1; j++) {
 			if (nizDestinacija[i].cijena > nizDestinacija[j].cijena) {
-				std::swap(nizDestinacija[j].id, nizDestinacija[i].id);
-				std::swap(nizDestinacija[j].brojOsoba, nizDestinacija[i].brojOsoba);
-				std::swap(nizDestinacija[j].grad, nizDestinacija[i].grad);
-				std::swap(nizDestinacija[j].datumPolaska, nizDestinacija[i].datumPolaska);
-				std::swap(nizDestinacija[j].datumPovratka, nizDestinacija[i].datumPovratka);
-				std::swap(nizDestinacija[j].brojOsoba, nizDestinacija[i].brojOsoba);
-				std::swap(nizDestinacija[j].vrsta, nizDestinacija[i].vrsta);
-				std::swap(nizDestinacija[j].drzava, nizDestinacija[i].drzava);
-				std::swap(nizDestinacija[j].hotel, nizDestinacija[i].hotel);
-				std::swap(nizDestinacija[j].cijena, nizDestinacija[i].cijena);
+				std::swap(nizDestinacija[j], nizDestinacija[i]);
 			}
 		}
 	}

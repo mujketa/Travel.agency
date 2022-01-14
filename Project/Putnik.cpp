@@ -34,6 +34,7 @@ std::string Putnik::getBrojKartice()
 	return this->brojKartice;
 }
 
+/*METODA ZA UNOS PUTNIKA*/
 void Putnik::setOsoba()
 {
 	std::ifstream some("putnik.txt");
@@ -81,6 +82,7 @@ void Putnik::setOsoba()
 	
 }
 
+/*METODA KOJA NAKON STO PUTNIK ODABERE DESTINACIJU, ISPISUJE GRAD I DRZAVU U putnik.txt*/
 void Putnik::setDestinacija()
 {
 	Destinacija dest;

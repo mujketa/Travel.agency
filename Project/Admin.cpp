@@ -10,6 +10,7 @@ Admin::Admin()
 {
 }
 
+/*METODA ZA PRIJAVU ADMINA U ADMIN MENU*/
 bool Admin::prijavaAdmina()
 {
     char ch;
@@ -56,7 +57,7 @@ bool Admin::prijavaAdmina()
         return false;
     }
 }
-
+/*METODA ZA DODAVANJE NOVOG ADMINA U ADMIN MENU*/
 void Admin::dodajAdmina()
 {
 

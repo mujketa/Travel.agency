@@ -1,22 +1,5 @@
 ----------------------------------------------------------------------------------------------------------------------------------------------------------
 ID:   Ime:                Prezime:               Email:                        Broj telefona:           Broj kartice:            Destinacija:
 ----------------------------------------------------------------------------------------------------------------------------------------------------------
-1     hamza               mujke                  sjdfghsdjk@gmail.ba           344575686578             1234567890123456         madrid, spain
-2     mujo                mujic                  sdfdsf@gmail.com              344364536                1234567890123456         mostar, bosnia
-3     suljo               suljic                 sdfdsf@.ba                    4654345645               1111111111111111         paris, france
-4     gfdg                dfgfd                  dfgdfg@.ba                    56454                    1234567890123456         madrid, spain
-5     sdfsd               sdfsd                  sdfsdsfd@.com                 345646                   1234567890123456         madrid, spain
-6     sdfsdfsd            sdfsdf                 34554334@.ba                  34534534                 1234567890123456         zagreb, croatia
-7     gfdg                gdfg                   dfgdf@.ba                     3453453                  1234567890123456         zagreb, croatia
-8     berin               kuhic                  ner@.ba                       092345243                2837465129384765         paris, france
-9     nermin              alic                   mer@.com                      032938473                2938475629384756         zenica, bih
-10    lejla               omerspahic             lejla@.ba                     061339845                1234567897654321         neki, tamo
-11    neki                tamo                   lik@.ba                       44564356                 1234321234565432         beograd, srbija
-12    dtg                 rth                    rsga@.ba                      4535                     1234321234543212         miami, usa
-13    lejla               omerspahic             4636@.ba                      3654                     1234321234321234         miami, usa
-14    gfdg                dfgfd                  sadsa@.ba                     45546                    1234567890123456         Stokholm, Svedska
-15    fdgfd               dfgfd                  fghgf@.ba                     34654654                 1234567890123456         Birmingham, Engleska
-17    ibrahim             mujka                  sdfdsfds@.ba                  43564654654              1234567890123456         Vlasic, BiH
-18    sdgfd               fdgfdgdf               fdgfd@.ba                     56456756                 1234567890123456         Milano, Italija
-18    sdfgsd              gfdgfd                 fdgfdg@.ba                    54676587                 1234567890123456         Moskva, Rusija
-19    sdfdsfs             sdfsdds                435fdsd@.ba                   435534654                1234567890123456         Istanbul, Turska
+1     Mujo                Mujic                  mujomujic@gmail.com           062876549                1234567890123456         Ljubljana, Slovenija
+2     Hamza               Mujkanovic             hamzamujkanovic@size.ba       062845321                7638920103940170         Prag, Ceska
